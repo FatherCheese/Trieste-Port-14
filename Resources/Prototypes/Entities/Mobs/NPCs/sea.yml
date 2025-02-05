@@ -323,3 +323,66 @@
         - MobLayer
   - type: MovementSpeedModifier
     baseWalkSpeed : 0
+
+- type: entity
+  name: sea slug
+  parent: SimpleSpaceMobBase
+  id: TP14MobSeaSlug
+  description: It glows in the deep dark ocean.
+  components:
+  - type: Item
+    size: Normal
+  - type: DamageOnHolding
+    enabled: true
+    damage:
+      types:
+        Heat: 1
+  - type: Body
+    prototype: SeaCreature
+  - type: MovementSpeedModifier
+    baseWalkSpeed : 2
+    baseSprintSpeed : 3
+  - type: Sprite
+    drawdepth: Mobs
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: seaslug
+      sprite: Mobs/Animals/seaslug.rsi
+  - type: Physics
+  - type: PointLight
+    color: White
+    radius: 3
+    energy: 1
+    netsync: false
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.2
+        density: 5
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: seaslug
+      Critical:
+        Base: dead
+      Dead:
+        Base: dead
+  - type: Bloodstream
+    bloodMaxVolume: 5
+    bloodReagent: UnstableMutagen
+  - type: Extractable
+    grindableSolutionName: food
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: UnstableMutagen
+          Quantity: 5
+        - ReagentId: Slime
+          Quantity: 10

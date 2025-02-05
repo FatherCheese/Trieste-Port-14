@@ -89,6 +89,26 @@
       maximumEntitiesSpawned: 3
 
 - type: entity
+  name: Sea slug Timed Spawner
+  id: SeaSlugTimedSpawner
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+    - state: blue
+    - sprite: Mobs/Animals/seaslug.rsi
+      state: seaslug
+    - state: timed
+  - type: Timer
+  - type: TimedSpawner
+    prototypes:
+    - TP14MobSeaSlug
+    chance: 0.5
+    intervalSeconds: 540
+    minimumEntitiesSpawned: 1
+    maximumEntitiesSpawned: 3
+
+- type: entity
   name: Cockroach Timed Spawner
   id: CockroachTimedSpawner
   parent: MouseTimedSpawner

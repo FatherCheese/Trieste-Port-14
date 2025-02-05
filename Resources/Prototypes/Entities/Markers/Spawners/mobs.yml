@@ -951,3 +951,17 @@
   - type: ConditionalSpawner
     prototypes:
     - MobReindeerDoe
+
+- type: entity
+  name: Sea slug Spawner
+  id: SpawnMobSeaSlug
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+    - state: seaslug
+      sprite: Mobs/Animals/seaslug.rsi
+  - type: ConditionalSpawner
+    prototypes:
+    - MobSeaSlug
