@@ -60,10 +60,12 @@ Puce - Programming
 
 Orks - Debugging, Refactoring
 
-TaoNewt - bugfixing
+TaoNewt - Bugfixing
 
-Moomoobeef - mapping
+Moomoobeef - Mapping
 
-Ermucat - programming
+Ermucat - Programming
 
-Slckstr - debugging
+Slckstr - Bugfixing
+
+FatherCheese - Programming
