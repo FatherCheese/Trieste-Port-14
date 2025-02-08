@@ -41,23 +41,29 @@ public sealed class InGasSystem : EntitySystem
         return (mixture != null && mixture.GetMoles(inGas.GasId) >= inGas.GasThreshold);
     }
 
-     public bool InWater(EntityUid uid, int? gasId = 9, float? gasThreshold = 60)
+     public bool InWater(EntityUid uid, int? gasId = 9)
     {
         var mixture = _atmo.GetContainingMixture(uid);
         var inGas = EntityManager.GetComponent<InGasComponent>(uid);
-        //Use provided data if no component present
-        if (inGas == null)
-        {
-            if (gasId == null || gasThreshold == null)
-            {
-                throw new Exception("Missing gasId and/or gasThreshold in InGas call");
-            }
 
-            return (mixture != null && mixture.GetMoles((int)gasId) >= gasThreshold);
+        if (mixture == null)
+        {
+            return false;
         }
 
-        //If we are not in the gas return false, else true
-        return (mixture != null && mixture.GetMoles(inGas.GasId) >= inGas.GasThreshold);
+        if (!gasId.HasValue)
+        {
+            return false;
+        }
+
+        if (mixture.GetMoles(Gas.Water) > 2f)
+        {
+            inGas.WaterAmount = mixture.GetMoles(Gas.Water); // Gets the amount of water around you
+            return true;
+        }
+
+        inGas.WaterAmount = 0f;
+        return false;
     }
 
    public override void Update(float frameTime)
@@ -72,25 +78,16 @@ public sealed class InGasSystem : EntitySystem
     var enumerator = EntityQueryEnumerator<InGasComponent, DamageableComponent>();
     while (enumerator.MoveNext(out var uid, out var inGas, out var damageable))
     {
+
+        bool currentlyInWater = InWater(uid);
+        inGas.InWater = currentlyInWater;
+
         if (!inGas.DamagedByGas)
         {
             continue;
         }
 
         // Check if the entity is in water
-        bool currentlyInWater = InWater(uid);
-
-            // Update the water state in the component
-
-            // Raise the event depending on whether it's entering or exiting water
-            if (currentlyInWater)
-            {
-                RaiseLocalEvent(new InWaterEvent(uid));
-            }
-            else
-            {
-                RaiseLocalEvent(new OutOfWaterEvent(uid));
-            }
 
         if (!currentlyInWater)
         {

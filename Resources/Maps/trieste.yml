@@ -66,6 +66,7 @@ entities:
     - type: Transform
     - type: Map
       mapPaused: True
+    - type: Trieste
     - type: PhysicsMap
     - type: GridTree
     - type: MovedGrids
