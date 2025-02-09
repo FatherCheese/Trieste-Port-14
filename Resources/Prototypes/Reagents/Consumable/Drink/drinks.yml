@@ -585,3 +585,24 @@
       effects:
       - !type:SatiateThirst
         factor: 0.6
+
+- type: reagent
+  id: KelpShake
+  name: reagent-name-kelpshake
+  parent: BaseDrink
+  desc: reagent-desc-kelpshake
+  physicalDesc: reagent-physical-desc-glowing
+  flavor: kelpshake
+  color: "#a6db96"
+  recognizable: true
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 2
+  metamorphicSprite:
+    sprite: Objects/Consumable/Drinks/kelpshakeglass.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 4
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false

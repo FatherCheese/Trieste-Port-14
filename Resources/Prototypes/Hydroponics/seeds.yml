@@ -1989,3 +1989,27 @@
       Min: 1
       Max: 2
       PotencyDivisor: 40
+
+- type: seed
+  id: seaweed
+  name: seeds-seaweed-name
+  noun: seeds-noun-seeds
+  displayName: seeds-seaweed-display-name
+  plantRsi: Objects/Specific/Hydroponics/seaweed.rsi
+  packetPrototype: SeaweedSeeds
+  productPrototypes:
+  - FoodSeaweed
+  lifespan: 25
+  maturation: 8
+  production: 3
+  growthStages: 4
+  yield: 3
+  potency: 5
+  idealLight: 3
+  waterConsumption: 1.00
+  nutrientConsumption: 0.40
+  chemicals:
+    KelpJuice:
+      Min: 1
+      Max: 20
+      PotencyDivisor: 20

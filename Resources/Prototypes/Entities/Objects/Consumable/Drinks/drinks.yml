@@ -2280,6 +2280,22 @@
     sprite: Objects/Consumable/Drinks/xenobasher.rsi
     state: icon
 
+- type: entity
+  parent: DrinkGlass
+  id: DrinkKelpShakeGlass
+  suffix: kelp shake
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: KelpShake
+          Quantity: 30
+  - type: Icon
+    sprite: Objects/Consumable/Drinks/xenobasher.rsi
+    state: icon
+
 # TODO: MOVE
 
 - type: entity

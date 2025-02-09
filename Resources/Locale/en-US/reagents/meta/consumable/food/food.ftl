@@ -18,3 +18,6 @@ reagent-desc-butter = You can believe it!
 
 reagent-name-pumpkin-flesh = pumpkin flesh
 reagent-desc-pumpkin-flesh = The mushy, sweet remains of a pumpkin.
+
+reagent-name-kelpjuice = kelp juice
+reagent-desc-kelpjuice = We promise it's not just salty seawater. It is salty, though.

@@ -2593,3 +2593,27 @@
     entries:
       Taco: AnomalyBerry
       Burger: AnomalyBerryBurger
+
+- type: entity
+  name: seaweed
+  description: Slimy and green, not to be confused with the froggy queen.
+  parent: FoodProduceBase
+  id: FoodSeaweed
+  components:
+  - type: FlavorProfile
+    flavors:
+    - kelpjuice
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/seaweed.rsi
+    state: produce
+  - type: Produce
+    seedId: seaweed
+  - type: Extractable
+    grindableSolutionName: food
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: KelpJuice
+          Quantity: 10

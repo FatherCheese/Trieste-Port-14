@@ -72,6 +72,7 @@ flavor-complex-mustard = like mustard
 flavor-complex-nutriment = like nutrition
 flavor-complex-vitamin = like vitamins
 flavor-complex-protein = like protein
+flavor-complex-kelpjuice = like the sea
 
 ## Generic food taste. This should be replaced with an actual flavor profile,
 ## if you have food that looks like this.
@@ -188,6 +189,7 @@ flavor-complex-alcohol = like alcohol
 flavor-complex-soda = like soda
 flavor-complex-juice = like juice
 flavor-complex-rocksandstones = like rocks and stones
+flavor-complex-kelpshake = like addiction and salt
 
 ## Basic drinks
 flavor-complex-water = like water

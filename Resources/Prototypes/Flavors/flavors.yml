@@ -1343,3 +1343,13 @@
   id: zombiecocktail
   flavorType: Complex
   description: flavor-complex-zombiecocktail
+
+- type: flavor
+  id: kelpjuice
+  flavorType: Complex
+  description: flavor-complex-kelpjuice
+
+- type: flavor
+  id: kelpshake
+  flavorType: Complex
+  description: flavor-complex-kelpshake

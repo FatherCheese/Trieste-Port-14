@@ -1231,3 +1231,13 @@
       amount: 1
   products:
     ZombieCocktail: 4
+
+- type: reaction
+  id: KelpShake
+  reactants:
+    KelpJuice:
+      amount: 3
+    UnstableMutagen:
+      amount: 1
+  products:
+    KelpShake: 4
