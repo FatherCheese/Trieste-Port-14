@@ -246,10 +246,10 @@
   - type: AtmosphericThruster
   - type: AmbientSound
     enabled: false
-    range: 4
+    range: 7
     volume: -4
     sound:
-       path: /Audio/Effects/shuttle_thruster.ogg # Changet this to a really loud helicopter
+       path: /Audio/Effects/atmospheric_thruster.ogg # Changet this to a really loud helicopter
   - type: Thruster
     damage:
       types:

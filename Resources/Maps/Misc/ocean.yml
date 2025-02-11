@@ -5031,6 +5031,13 @@ entities:
     - type: Transform
       pos: 44.5,-74.5
       parent: 2
+- proto: DefaultStationBeaconWastes
+  entities:
+  - uid: 9402
+    components:
+    - type: Transform
+      pos: 33.5,-58.5
+      parent: 2
 - proto: DiceBag
   entities:
   - uid: 29914
