@@ -1,0 +1,131 @@
+- type: constructionGraph
+  id: PlasticTube
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: half
+      steps:
+      - material: Plastic
+        amount: 1
+        doAfter: 1
+
+    - to: straight
+      steps:
+      - material: Plastic
+        amount: 1
+        doAfter: 1
+
+    - to: bend
+      steps:
+      - material: Plastic
+        amount: 1
+        doAfter: 1
+
+    - to: tjunction
+      steps:
+      - material: Plastic
+        amount: 1
+        doAfter: 1
+
+    - to: fourway
+      steps:
+      - material: Plastic
+        amount: 1
+        doAfter: 1
+
+  - node: half
+    entity: PlasticTubeHalf
+    edges:
+    - to: start
+      conditions:
+      - !type:EntityAnchored
+        anchored: false
+      completed:
+      - !type:SpawnPrototype
+        prototype: SheetPlastic1
+        amount: 1
+      - !type:DeleteEntity
+      steps:
+      - tool: Cutting
+        doAfter: 1
+
+  - node: straight
+    entity: PlasticTubeStraight
+    edges:
+    - to: start
+      conditions:
+      - !type:EntityAnchored
+        anchored: false
+      completed:
+      - !type:SpawnPrototype
+        prototype: SheetPlastic1
+        amount: 1
+      - !type:DeleteEntity
+      steps:
+      - tool: Cutting
+        doAfter: 1
+
+  - node: bend
+    entity: PlasticTubeBend
+    edges:
+    - to: start
+      conditions:
+      - !type:EntityAnchored
+        anchored: false
+      completed:
+      - !type:SpawnPrototype
+        prototype: SheetPlastic1
+        amount: 1
+      - !type:DeleteEntity
+      steps:
+      - tool: Cutting
+        doAfter: 1
+
+  - node: tjunction
+    entity: PlasticTubeTJunction
+    edges:
+    - to: start
+      conditions:
+      - !type:EntityAnchored
+        anchored: false
+      completed:
+      - !type:SpawnPrototype
+        prototype: SheetPlastic1
+        amount: 1
+      - !type:DeleteEntity
+      steps:
+      - tool: Cutting
+        doAfter: 1
+
+  - node: fourway
+    entity: PlasticTubeFourway
+    edges:
+    - to: start
+      conditions:
+      - !type:EntityAnchored
+        anchored: false
+      completed:
+      - !type:SpawnPrototype
+        prototype: SheetPlastic1
+        amount: 1
+      - !type:DeleteEntity
+      steps:
+      - tool: Cutting
+        doAfter: 1
+
+  - node: broken
+    entity: PlasticTubeBroken
+    edges:
+    - to: start
+      conditions:
+      - !type:EntityAnchored
+        anchored: false
+      completed:
+      - !type:SpawnPrototype
+        prototype: SheetPlastic1
+        amount: 1
+      - !type:DeleteEntity
+      steps:
+      - tool: Cutting
+        doAfter: 1

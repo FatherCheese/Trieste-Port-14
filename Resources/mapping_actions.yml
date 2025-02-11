@@ -1133,4 +1133,65 @@
   assignments:
   - 0: 6
   name: steel floor
+# Plastic Tube
+- action: !type:InstantActionComponent
+    icon:
+      entity: PlasticTubeStraight
+    keywords: []
+    checkCanInteract: False
+    checkConsciousness: False
+    clientExclusive: True
+    autoPopulate: False
+    temporary: True
+    event: !type:StartPlacementActionEvent
+      placementOption: SnapgridCenter
+      entityType: PlasticTubeStraight
+  assignments:
+  - 1: 0
+  name: PlasticTubeStraight
+- action: !type:InstantActionComponent
+    icon:
+      entity: PlasticTubeBend
+    keywords: []
+    checkCanInteract: False
+    checkConsciousness: False
+    clientExclusive: True
+    autoPopulate: False
+    temporary: True
+    event: !type:StartPlacementActionEvent
+      placementOption: SnapgridCenter
+      entityType: PlasticTubeBend
+  assignments:
+  - 1: 1
+  name: PlasticTubeBend
+- action: !type:InstantActionComponent
+    icon:
+      entity: PlasticTubeTJunction
+    keywords: []
+    checkCanInteract: False
+    checkConsciousness: False
+    clientExclusive: True
+    autoPopulate: False
+    temporary: True
+    event: !type:StartPlacementActionEvent
+      placementOption: SnapgridCenter
+      entityType: PlasticTubeTJunction
+  assignments:
+  - 1: 2
+  name: PlasticTubeTJunction
+- action: !type:InstantActionComponent
+    icon:
+      entity: PlasticTubeFourway
+    keywords: []
+    checkCanInteract: False
+    checkConsciousness: False
+    clientExclusive: True
+    autoPopulate: False
+    temporary: True
+    event: !type:StartPlacementActionEvent
+      placementOption: SnapgridCenter
+      entityType: PlasticTubeFourway
+  assignments:
+  - 1: 3
+  name: PlasticTubeFourway
 ...

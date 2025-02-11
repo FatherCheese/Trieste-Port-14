@@ -373,7 +373,7 @@
   startNode: start
   targetNode: sensor
   category: construction-category-structures
-  description: Reports on the status of the gas within the attached pipe network. 
+  description: Reports on the status of the gas within the attached pipe network.
   icon:
     sprite: Structures/Piping/Atmospherics/gas_pipe_sensor.rsi
     state: icon
@@ -870,3 +870,75 @@
   canBuildInImpassable: true
   conditions:
   - !type:WallmountCondition
+
+# hydroponics TUBES
+
+- type: construction
+  name: plastic tube half
+  id: PlasticTubeHalf
+  description: Half of a plastic tube.
+  graph: PlasticTube
+  startNode: start
+  targetNode: half
+  category: construction-category-utilities
+  placementMode: SnapgridCenter
+  canBuildInImpassable: true
+  icon:
+    sprite: Structures/Piping/hydroponics.rsi
+    state: pipeHalf
+
+- type: construction
+  name: plastic tube straight
+  id: PlasticTubeStraight
+  description: A straight tube segment.
+  graph: PlasticTube
+  startNode: start
+  targetNode: straight
+  category: construction-category-utilities
+  placementMode: SnapgridCenter
+  canBuildInImpassable: true
+  icon:
+    sprite: Structures/Piping/hydroponics.rsi
+    state: pipeStraight
+
+- type: construction
+  name: plastic tube bend
+  id: PlasticTubeBend
+  description: A tube segment bent at a 90 degree angle.
+  graph: PlasticTube
+  startNode: start
+  targetNode: bend
+  category: construction-category-utilities
+  placementMode: SnapgridCenter
+  canBuildInImpassable: true
+  icon:
+    sprite: Structures/Piping/hydroponics.rsi
+    state: pipeBend
+
+- type: construction
+  name: plastic tube T Junction
+  id: PlasticTubeTJunction
+  description: A tube segment with a T junction.
+  graph: PlasticTube
+  startNode: start
+  targetNode: tjunction
+  category: construction-category-utilities
+  placementMode: SnapgridCenter
+  canBuildInImpassable: true
+  icon:
+    sprite: Structures/Piping/hydroponics.rsi
+    state: pipeTJunction
+
+- type: construction
+  name: plastic tube fourway
+  id: PlasticTubeFourway
+  description: A tube segment with a fourway junction.
+  graph: PlasticTube
+  startNode: start
+  targetNode: fourway
+  category: construction-category-utilities
+  placementMode: SnapgridCenter
+  canBuildInImpassable: true
+  icon:
+    sprite: Structures/Piping/hydroponics.rsi
+    state: pipeFourway
