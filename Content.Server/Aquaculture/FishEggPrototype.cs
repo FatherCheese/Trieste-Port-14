@@ -1,18 +1,16 @@
-using Content.Server.Botany.Components;
-using Content.Server.Botany.Systems;
+using Content.Server.Aquaculture.Systems;
 using Content.Shared.Atmos;
 using Content.Shared.EntityEffects;
 using Content.Shared.Random;
-using Robust.Shared.Audio;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.List;
 using Robust.Shared.Utility;
 
-namespace Content.Server.Botany;
+namespace Content.Server.Aquaculture;
 
-[Prototype("seed")]
-public sealed partial class SeedPrototype : SeedData, IPrototype
+[Prototype("fishegg")]
+public sealed partial class FishEggPrototype : FishEggData, IPrototype
 {
     [IdDataField] public string ID { get; private init; } = default!;
 }
@@ -55,7 +53,7 @@ public enum HarvestType : byte
 */
 
 [DataDefinition]
-public partial struct SeedChemQuantity
+public partial struct FishEggChemQuantity
 {
     /// <summary>
     /// Minimum amount of chemical that is added to produce, regardless of the potency
@@ -79,15 +77,12 @@ public partial struct SeedChemQuantity
     [DataField("Inherent")] public bool Inherent = true;
 }
 
-// TODO reduce the number of friends to a reasonable level. Requires ECS-ing things like plant holder component.
 [Virtual, DataDefinition]
-[Access(typeof(BotanySystem),
-    typeof(PlantHolderSystem),
-    typeof(SeedExtractorSystem),
-    typeof(PlantHolderComponent),
+[Access(typeof(AquacultureSystem),
+    typeof(AquacultureTankSystem),
     typeof(EntityEffect),
-    typeof(MutationSystem))]
-public partial class SeedData
+    typeof(FishMutationSystem))]
+public partial class FishEggData
 {
     #region Tracking
 
@@ -98,24 +93,19 @@ public partial class SeedData
     public string Name { get; private set; } = "";
 
     /// <summary>
-    ///     The noun for this type of seeds. E.g. for fungi this should probably be "spores" instead of "seeds". Also
-    ///     used to determine the name of seed packets.
-    /// </summary>
-    [DataField("noun")]
-    public string Noun { get; private set; } = "";
-
-    /// <summary>
     ///     Name displayed when examining the hydroponics tray. Describes the actual plant, not the seed itself.
     /// </summary>
     [DataField("displayName")]
     public string DisplayName { get; private set; } = "";
 
-    [DataField("mysterious")] public bool Mysterious;
+    [DataField("mysterious")]
+    public bool Mysterious;
 
     /// <summary>
     ///     If true, the properties of this seed cannot be modified.
     /// </summary>
-    [DataField("immutable")] public bool Immutable;
+    [DataField("immutable")]
+    public bool Immutable;
 
     /// <summary>
     ///     If true, there is only a single reference to this seed and it's properties can be directly modified without
@@ -129,8 +119,8 @@ public partial class SeedData
     /// <summary>
     ///     The entity prototype that is spawned when this type of seed is extracted from produce using a seed extractor.
     /// </summary>
-    [DataField("packetPrototype", customTypeSerializer: typeof(PrototypeIdSerializer<EntityPrototype>))]
-    public string PacketPrototype = "SeedBase";
+    [DataField("fishEggsPrototype", customTypeSerializer: typeof(PrototypeIdSerializer<EntityPrototype>))]
+    public string FishEggsPrototype = "FishEggsBase";
 
     /// <summary>
     ///     The entity prototype this seed spawns when it gets harvested.
@@ -138,7 +128,7 @@ public partial class SeedData
     [DataField("productPrototypes", customTypeSerializer: typeof(PrototypeIdListSerializer<EntityPrototype>))]
     public List<string> ProductPrototypes = new();
 
-    [DataField] public Dictionary<string, SeedChemQuantity> Chemicals = new();
+    [DataField] public Dictionary<string, FishEggChemQuantity> Chemicals = new();
 
     [DataField] public Dictionary<Gas, float> ConsumeGasses = new();
 
@@ -149,8 +139,10 @@ public partial class SeedData
     #region Tolerances
 
     [DataField] public float NutrientConsumption = 0.75f;
-
     [DataField] public float WaterConsumption = 0.5f;
+    [DataField] public float PlanktonConsumption = 0.5f;
+    [DataField] public float AmmoniaCreation = 0.3f;
+
     [DataField] public float IdealHeat = 293f;
     [DataField] public float HeatTolerance = 10f;
     [DataField] public float IdealLight = 7f;
@@ -177,7 +169,7 @@ public partial class SeedData
     [DataField] public float Lifespan;
     [DataField] public float Maturation;
     [DataField] public float Production;
-    [DataField] public int GrowthStages = 6;
+    [DataField] public int GrowthStages = 5; // Egg, Embryo, larva, juvenile, adult
 
     [DataField] public HarvestType HarvestRepeat = HarvestType.NoRepeat;
 
@@ -187,7 +179,7 @@ public partial class SeedData
     ///     If true, cannot be harvested for seeds. Balances hybrids and
     ///     mutations.
     /// </summary>
-    [DataField] public bool Seedless = false;
+    [DataField] public bool Eggless = false;
 
     /// <summary>
     ///     If false, rapidly decrease health while growing. Used to kill off
@@ -218,22 +210,10 @@ public partial class SeedData
     #region Cosmetics
 
     [DataField(required: true)]
-    public ResPath PlantRsi { get; set; } = default!;
+    public ResPath FishRsi { get; set; } = default!;
 
-    [DataField] public string PlantIconState { get; set; } = "produce";
+    [DataField] public string FishIconState { get; set; } = "produce";
 
-    /// <summary>
-    /// Screams random sound from collection SoundCollectionSpecifier
-    /// </summary>
-    [DataField]
-    public SoundSpecifier ScreamSound = new SoundCollectionSpecifier("PlantScreams", AudioParams.Default.WithVolume(-10));
-
-    [DataField("screaming")] public bool CanScream;
-
-    [DataField(customTypeSerializer: typeof(PrototypeIdSerializer<EntityPrototype>))]
-    public string KudzuPrototype = "WeakKudzu";
-
-    [DataField] public bool TurnIntoKudzu;
     [DataField] public string? SplatPrototype { get; set; }
 
     #endregion
@@ -246,29 +226,31 @@ public partial class SeedData
     /// <summary>
     ///     The seed prototypes this seed may mutate into when prompted to.
     /// </summary>
-    [DataField(customTypeSerializer: typeof(PrototypeIdListSerializer<SeedPrototype>))]
+    [DataField(customTypeSerializer: typeof(PrototypeIdListSerializer<FishEggPrototype>))]
     public List<string> MutationPrototypes = new();
 
-    public SeedData Clone()
+    public FishEggData Clone()
     {
         DebugTools.Assert(!Immutable, "There should be no need to clone an immutable seed.");
 
-        var newSeed = new SeedData
+        var newSeed = new FishEggData
         {
             Name = Name,
-            Noun = Noun,
             DisplayName = DisplayName,
             Mysterious = Mysterious,
 
-            PacketPrototype = PacketPrototype,
+            FishEggsPrototype = FishEggsPrototype,
             ProductPrototypes = new List<string>(ProductPrototypes),
             MutationPrototypes = new List<string>(MutationPrototypes),
-            Chemicals = new Dictionary<string, SeedChemQuantity>(Chemicals),
+            Chemicals = new Dictionary<string, FishEggChemQuantity>(Chemicals),
             ConsumeGasses = new Dictionary<Gas, float>(ConsumeGasses),
             ExudeGasses = new Dictionary<Gas, float>(ExudeGasses),
 
             NutrientConsumption = NutrientConsumption,
             WaterConsumption = WaterConsumption,
+            PlanktonConsumption = PlanktonConsumption,
+            AmmoniaCreation = AmmoniaCreation,
+
             IdealHeat = IdealHeat,
             HeatTolerance = HeatTolerance,
             IdealLight = IdealLight,
@@ -288,14 +270,12 @@ public partial class SeedData
             HarvestRepeat = HarvestRepeat,
             Potency = Potency,
 
-            Seedless = Seedless,
+            Eggless = Eggless,
             Viable = Viable,
             Ligneous = Ligneous,
 
-            PlantRsi = PlantRsi,
-            PlantIconState = PlantIconState,
-            CanScream = CanScream,
-            TurnIntoKudzu = TurnIntoKudzu,
+            FishRsi = FishRsi,
+            FishIconState = FishIconState,
             SplatPrototype = SplatPrototype,
             Mutations = new List<RandomPlantMutation>(),
 
@@ -311,25 +291,27 @@ public partial class SeedData
     /// <summary>
     /// Handles copying most species defining data from 'other' to this seed while keeping the accumulated mutations intact.
     /// </summary>
-    public SeedData SpeciesChange(SeedData other)
+    public FishEggData SpeciesChange(FishEggData other)
     {
-        var newSeed = new SeedData
+        var newSeed = new FishEggData
         {
             Name = other.Name,
-            Noun = other.Noun,
             DisplayName = other.DisplayName,
             Mysterious = other.Mysterious,
 
-            PacketPrototype = other.PacketPrototype,
+            FishEggsPrototype = other.FishEggsPrototype,
             ProductPrototypes = new List<string>(other.ProductPrototypes),
             MutationPrototypes = new List<string>(other.MutationPrototypes),
 
-            Chemicals = new Dictionary<string, SeedChemQuantity>(Chemicals),
+            Chemicals = new Dictionary<string, FishEggChemQuantity>(Chemicals),
             ConsumeGasses = new Dictionary<Gas, float>(ConsumeGasses),
             ExudeGasses = new Dictionary<Gas, float>(ExudeGasses),
 
             NutrientConsumption = NutrientConsumption,
             WaterConsumption = WaterConsumption,
+            PlanktonConsumption = PlanktonConsumption,
+            AmmoniaCreation = AmmoniaCreation,
+
             IdealHeat = IdealHeat,
             HeatTolerance = HeatTolerance,
             IdealLight = IdealLight,
@@ -351,14 +333,12 @@ public partial class SeedData
 
             Mutations = Mutations,
 
-            Seedless = Seedless,
+            Eggless = Eggless,
             Viable = Viable,
             Ligneous = Ligneous,
 
-            PlantRsi = other.PlantRsi,
-            PlantIconState = other.PlantIconState,
-            CanScream = CanScream,
-            TurnIntoKudzu = TurnIntoKudzu,
+            FishRsi = other.FishRsi,
+            FishIconState = other.FishIconState,
             SplatPrototype = other.SplatPrototype,
 
             // Newly cloned seed is unique. No need to unnecessarily clone if repeatedly modified.

@@ -606,3 +606,24 @@
   metamorphicMaxFillLevels: 4
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
+
+# Just putting this here since the aquaculture tank needs plankton. -Cookie
+- type: reagent
+  id: Plankton
+  name: reagent-name-plankton
+  parent: BaseDrink
+  desc: reagent-desc-plankton
+  slippery: true
+  physicalDesc: reagent-physical-desc-sickly
+  flavor: plankton
+  color: "#135c4f"
+  recognizable: true
+  boilingPoint: 100.0
+  meltingPoint: 0.0
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 2
+      - !type:SatiateHunger
+        factor: 1

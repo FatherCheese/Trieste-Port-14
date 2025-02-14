@@ -1,0 +1,20 @@
+- type: entity
+  name: fish net
+  parent: BaseItem
+  id: AquacultureToolFishNet
+  description: It's used for removing fish and fish eggs.
+  components:
+  - type: Tag
+    tags:
+    - Scoop
+  - type: Sprite
+    sprite: Objects/Tools/Aquaculture/scoop.rsi
+    state: icon
+  - type: MeleeWeapon
+    wideAnimationRotation: 135
+    swingLeft: true
+    damage:
+      types:
+        Blunt: 3
+  - type: Item
+    sprite: Objects/Tools/Aquaculture/scoop.rsi

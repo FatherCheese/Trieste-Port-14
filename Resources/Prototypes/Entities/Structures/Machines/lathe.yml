@@ -473,6 +473,7 @@
       - SurveillanceWirelessCameraMovableCircuitboard
       - SurveillanceWirelessCameraAnchoredCircuitboard
       - HydroponicsTrayMachineCircuitboard
+      - AquacultureTankMachineCircuitboard
       - SolarControlComputerCircuitboard
       - SolarTrackerElectronics
       - TurboItemRechargerCircuitboard

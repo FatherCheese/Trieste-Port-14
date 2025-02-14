@@ -2617,3 +2617,5 @@
         reagents:
         - ReagentId: KelpJuice
           Quantity: 10
+      plant:
+        maxVol: 5

@@ -36,3 +36,6 @@ reagent-desc-grey-matter = Thought juice, the stuff that leaks out of your ears.
 
 reagent-name-denatured = denatured proteins
 reagent-desc-denatured = Completely useless.
+
+reagent-name-plankton = Plankton
+reagent-desc-plankton = Contains one in a krillion.

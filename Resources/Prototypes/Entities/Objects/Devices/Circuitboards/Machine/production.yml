@@ -605,6 +605,25 @@
           defaultPrototype: Beaker
 
 - type: entity
+  id: AquacultureTankMachineCircuitboard
+  parent: BaseMachineCircuitboard
+  name: aquaculture tank machine board
+  description: A machine printed circuit board for an aquaculture tank.
+  components:
+  - type: Sprite
+    state: service
+  - type: MachineBoard
+    prototype: AquacultureTankEmpty
+    stackRequirements:
+      # replacing the console screen
+      Glass: 5
+      Cable: 2
+    tagRequirements:
+      GlassBeaker:
+        amount: 2
+        defaultPrototype: Beaker
+
+- type: entity
   id: SeedExtractorMachineCircuitboard
   parent: BaseMachineCircuitboard
   name: seed extractor machine board

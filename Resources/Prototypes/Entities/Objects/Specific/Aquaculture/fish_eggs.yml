@@ -1,0 +1,23 @@
+- type: entity
+  parent: BaseItem
+  id: FishEggBase
+  abstract: true
+  components:
+  - type: SolutionContainerManager
+  - type: Sprite
+    sprite: Objects/Specific/Aquaculture/base.rsi
+    state: egg
+  - type: Item
+    size: Tiny
+  - type: StaticPrice
+    price: 40
+
+- type: entity
+  parent: FishEggBase
+  name: common fish roe
+  id: CommonRoe
+  components:
+  - type: FishEgg
+    fishEggId: common-roe
+  - type: Sprite
+    sprite: Objects/Specific/Aquaculture/common.rsi
