@@ -16,6 +16,9 @@
   plantMetabolism:
   - !type:PlantAdjustWater
     amount: 1
+  fishMetabolism:
+  - !type:FishAdjustWater
+    amount: 1
   tileReactions:
   - !type:ExtinguishTileReaction { }
   - !type:SpillIfPuddlePresentTileReaction { }
@@ -36,6 +39,11 @@
     amount: 0.1
   - !type:PlantAdjustHealth
     amount: -0.1
+  fishMetabolism:
+  - !type:FishAdjustWater
+    amount: 0.1
+  - !type:FishAdjustHealth
+    amount: -1
   footstepSound:
     collection: FootstepSticky
     params:
@@ -67,6 +75,11 @@
     amount: 0.25
   - !type:PlantAdjustWater
     amount: 0.7
+  fishMetabolism:
+  - !type:FishAdjustWater
+    amount: 0.7
+  - !type:FishAdjustHealth
+    amount: -1
 
 - type: reagent
   id: BaseJuice

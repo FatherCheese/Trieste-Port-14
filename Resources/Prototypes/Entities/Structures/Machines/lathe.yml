@@ -203,6 +203,7 @@
       - ClothingHeadHatCone
       - FreezerElectronics
       - PaperJellid
+      - TP14ToolFishNetLathe
   - type: EmagLatheRecipes
     emagStaticRecipes:
       - BoxLethalshot
@@ -473,7 +474,6 @@
       - SurveillanceWirelessCameraMovableCircuitboard
       - SurveillanceWirelessCameraAnchoredCircuitboard
       - HydroponicsTrayMachineCircuitboard
-      - AquacultureTankMachineCircuitboard
       - SolarControlComputerCircuitboard
       - SolarTrackerElectronics
       - TurboItemRechargerCircuitboard
@@ -524,6 +524,7 @@
       - JukeboxCircuitBoard
       - SMESAdvancedMachineCircuitboard
       - HolopadMachineCircuitboard
+      - TP14AquacultureTankMachineCircuitboardRecipe
   - type: EmagLatheRecipes
     emagDynamicRecipes:
       - ShuttleGunDusterCircuitboard

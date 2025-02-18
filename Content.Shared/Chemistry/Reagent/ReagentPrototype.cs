@@ -158,6 +158,9 @@ namespace Content.Shared.Chemistry.Reagent
         [DataField("plantMetabolism", serverOnly: true)]
         public List<EntityEffect> PlantMetabolisms = new(0);
 
+        [DataField("fishMetabolism", serverOnly: true)]
+        public List<EntityEffect> FishMetabolisms = new(0);
+
         [DataField]
         public float PricePerUnit;
 
@@ -206,6 +209,35 @@ namespace Content.Shared.Chemistry.Reagent
                 }
 
                 plantMetabolizable.Effect(args);
+            }
+        }
+
+        /// <summary>
+        /// This handles the reaction that aquaculture tanks get from reagents.
+        /// </summary>
+        /// <param name="uid"></param>
+        /// <param name="amount"></param>
+        /// <param name="solution"></param>
+        public void ReactionFish(EntityUid? uid, ReagentQuantity amount, Solution solution)
+        {
+            if (uid == null)
+                return;
+
+            var entMan = IoCManager.Resolve<IEntityManager>();
+            var random = IoCManager.Resolve<IRobustRandom>();
+            var args = new EntityEffectReagentArgs(uid.Value, entMan, null, solution, amount.Quantity, this, null, 1f);
+            foreach (var fishMetabolizable in FishMetabolisms.Where(fishMetabolizable => fishMetabolizable.ShouldApply(args, random)))
+            {
+                if (fishMetabolizable.ShouldLog)
+                {
+                    var entity = args.TargetEntity;
+                    entMan.System<SharedAdminLogSystem>()
+                        .Add(LogType.ReagentEffect,
+                            fishMetabolizable.LogImpact,
+                            $"Fish metabolism effect {fishMetabolizable.GetType().Name:effect} of reagent {ID:reagent} applied on entity {entMan.ToPrettyString(entity):entity} at {entMan.GetComponent<TransformComponent>(entity).Coordinates:coordinates}");
+                }
+
+                fishMetabolizable.Effect(args);
             }
         }
     }

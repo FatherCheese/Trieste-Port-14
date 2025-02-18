@@ -11,6 +11,9 @@
     amount: 10
   - !type:PlantAdjustHealth
     amount: -5
+  fishMetabolism:
+  - !type:FishAdjustHealth
+    amount: -10
   metabolisms:
     Poison:
       effects:
@@ -32,6 +35,9 @@
     amount: 10
   - !type:PlantAdjustHealth
     amount: -5
+  fishMetabolism:
+  - !type:FishAdjustHealth
+    amount: -10
   metabolisms:
     Poison:
       effects:
@@ -166,6 +172,9 @@
     amount: -4
   - !type:PlantAdjustHealth
     amount: -8
+  fishMetabolism:
+  - !type:FishAdjustHealth
+    amount: -10
   reactiveEffects:
     Acidic:
       methods: [ Touch ]
@@ -276,6 +285,9 @@
     amount: -2
   - !type:PlantAdjustHealth
     amount: -5
+  fishMetabolism:
+  - !type:FishAdjustHealth
+    amount: -10
   reactiveEffects:
     Acidic:
       methods: [ Touch ]

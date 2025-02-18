@@ -1,0 +1,12 @@
+- type: construction
+  name: filter
+  id: TP14FilterCrafting
+  graph: TP14FilterGraph
+  startNode: start
+  targetNode: done
+  category: construction-category-utility
+  description: An aquaculture tank filter.
+  icon:
+    sprite: Objects/Tools/Aquaculture/filter.rsi
+    state: clean
+  objectType: Item

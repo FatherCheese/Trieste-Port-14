@@ -1,0 +1,149 @@
+- type: entity
+  name: aquaculture tank
+  parent: SmallConstructibleMachine
+  id: TP14AquacultureTank
+  placement:
+    mode: SnapgridCenter
+  description: An interstellar-grade aquaculture tank, allowing for rapid growth and selective breeding of fish.
+  components:
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.45,-0.45,0.45,0.1"
+        density: 190
+        hard: false
+        mask:
+        - FullTileMask
+        layer:
+        - FullTileMask
+  - type: Anchorable
+  - type: Pullable
+  - type: InteractionOutline
+  - type: Clickable
+  - type: Physics
+    bodyType: Static
+  - type: Sprite
+    layers:
+    - sprite: Structures/Aquaculture/containers.rsi
+      state: tank
+    - sprite: Structures/Aquaculture/overlays.rsi
+      state: lowhealth3
+      map: [ "health_alert" ]
+      visible: false
+    - sprite: Structures/Aquaculture/overlays.rsi
+      state: lowwater3
+      map: [ "water_alert" ]
+      visible: false
+    - sprite: Structures/Aquaculture/overlays.rsi
+      state: lowplant3
+      map: [ "nutri_alert" ]
+      visible: false
+    - sprite: Structures/Aquaculture/overlays.rsi
+      state: warning3
+      map: [ "generic_alert" ]
+      visible: false
+    - sprite: Structures/Aquaculture/overlays.rsi
+      state: harvest3
+      map: [ "harvest_alert" ]
+      visible: false
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.FishGrowerVisuals.HealthLight:
+        health_alert:
+          True: { visible: true }
+          False: { visible: false }
+      enum.FishGrowerVisuals.WaterLight:
+        water_alert:
+          True: { visible: true }
+          False: { visible: false }
+      enum.FishGrowerVisuals.NutritionLight:
+        nutri_alert:
+          True: { visible: true }
+          False: { visible: false }
+      enum.FishGrowerVisuals.WarningLight:
+        generic_alert:
+          True: { visible: true }
+          False: { visible: false }
+      enum.FishGrowerVisuals.HarvestLight:
+        harvest_alert:
+          True: { visible: true }
+          False: { visible: false }
+  - type: FishGrower
+    solutionSound:
+      path: /Audio/Effects/Fluids/slosh.ogg
+      params:
+        volume: -6
+        variation: 0.20
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Metallic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:ChangeConstructionNodeBehavior
+        node: machineFrame
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalGlassBreak
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+  - type: Machine
+    board: TP14AquacultureTankMachineCircuitboard
+  - type: WiresPanel
+  - type: AmbientSound
+    volume: -9
+    range: 5
+    sound:
+      path: /Audio/Ambience/Objects/flowing_water_open.ogg
+  - type: GuideHelp
+    guides:
+    - Botany
+    - Chemicals
+  - type: SolutionContainerManager
+    solutions:
+      soil:
+        maxVol: 200
+  - type: RefillableSolution
+    solution: soil
+    maxRefill: 50
+  - type: Transform
+    noRot: true
+    anchored: true
+  - type: Reactive
+    reactions:
+    - reagents: [ Water ]
+      methods: [ Touch, Ingestion, Injection ]
+      effects:
+      - !type:AddToSolutionReaction
+        solution: soil
+  - type: DrainableSolution
+    solution: tank
+  - type: ReagentTank
+    transferAmount: 100
+  - type: FishGrowerVisuals
+  - type: ContainerContainer
+    containers:
+      filterSlot: !type:ContainerSlot
+  - type: ItemSlots
+    slots:
+      filterSlot:
+        startingItem: TP14Filter
+        whitelist:
+          components:
+          - FitsInFilter
+
+- type: entity
+  parent: TP14AquacultureTank
+  id: TP14AquacultureTankEmpty
+  suffix: Empty
+  components:
+  - type: FishGrower
+    waterAmount: 0
+    foodAmount: 0
+    clothAmount: 0

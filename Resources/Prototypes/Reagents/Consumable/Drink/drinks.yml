@@ -261,6 +261,11 @@
       amount: 0.1
     - !type:PlantAdjustWater
       amount: 0.9
+  fishMetabolism:
+  - !type:FishAdjustWater
+    amount: 0.9
+  - !type:FishAdjustHealth
+    amount: -1
   metabolisms:
     Drink:
       effects:
@@ -461,6 +466,9 @@
   plantMetabolism:
   - !type:PlantAdjustWater
     amount: 1
+  fishMetabolism:
+  - !type:FishAdjustWater
+    amount: 1
   metamorphicSprite:
     sprite: Objects/Consumable/Drinks/iceglass.rsi
     state: icon_empty
@@ -606,24 +614,3 @@
   metamorphicMaxFillLevels: 4
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
-
-# Just putting this here since the aquaculture tank needs plankton. -Cookie
-- type: reagent
-  id: Plankton
-  name: reagent-name-plankton
-  parent: BaseDrink
-  desc: reagent-desc-plankton
-  slippery: true
-  physicalDesc: reagent-physical-desc-sickly
-  flavor: plankton
-  color: "#135c4f"
-  recognizable: true
-  boilingPoint: 100.0
-  meltingPoint: 0.0
-  metabolisms:
-    Drink:
-      effects:
-      - !type:SatiateThirst
-        factor: 2
-      - !type:SatiateHunger
-        factor: 1

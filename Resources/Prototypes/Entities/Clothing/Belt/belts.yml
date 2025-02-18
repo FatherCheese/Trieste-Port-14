@@ -345,6 +345,7 @@
         - Syringe
         - CigPack
         - Dropper
+        - Scoop
       components:
         - Seed
         - Smokable
@@ -363,6 +364,10 @@
         whitelist:
           tags:
           - BotanyHoe
+      fishnet:
+        whitelist:
+          tags:
+          - Scoop
       secateurs: # We don't have secateurs and this looks similar enough.
         whitelist:
           tags:

@@ -1,0 +1,7 @@
+- type: latheRecipe
+  id: TP14ToolFishNetLathe
+  result: TP14ToolFishNet
+  category: Tools
+  completetime: 3
+  materials:
+    Plastic: 200

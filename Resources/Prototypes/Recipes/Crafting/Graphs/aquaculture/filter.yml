@@ -1,0 +1,13 @@
+- type: constructionGraph
+  id: TP14FilterGraph
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: done
+      steps:
+      - material: Plastic
+      - material: Cloth
+        doAfter: 3
+  - node: done
+    entity: TP14Filter

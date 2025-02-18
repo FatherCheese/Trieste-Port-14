@@ -64,6 +64,9 @@
     amount: -10
   - !type:PlantAdjustHealth
     amount: 1
+  fishMetabolism:
+  - !type:FishAdjustHealth
+    amount: 1
 
 - type: reagent
   id: Diphenhydramine

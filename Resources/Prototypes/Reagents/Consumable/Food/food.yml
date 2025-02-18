@@ -16,6 +16,11 @@
     amount: 1.5
   - !type:PlantAdjustHealth
     amount: 0.75
+  fishMetabolism:
+  - !type:FishAdjustFood
+    amount: 1.5
+  - !type:FishAdjustHealth
+    amount: 1
   pricePerUnit: 2
 
 - type: reagent
@@ -45,6 +50,11 @@
     amount: 0.5
   - !type:PlantAdjustHealth
     amount: 1.5
+  fishMetabolism:
+  - !type:FishAdjustFood
+    amount: 0.5
+  - !type:FishAdjustHealth
+    amount: 2
   pricePerUnit: 2.5
 
 - type: reagent
@@ -125,4 +135,9 @@
     amount: 1.5
   - !type:PlantAdjustHealth
     amount: 0.75
+  fishMetabolism:
+  - !type:FishAdjustFood
+    amount: 2
+  - !type:FishAdjustHealth
+    amount: 2
   pricePerUnit: 2

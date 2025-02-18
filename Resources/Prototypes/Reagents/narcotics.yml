@@ -195,6 +195,11 @@
     amount: -5
   - !type:PlantAdjustHealth
     amount: -1
+  fishMetabolism:
+  - !type:FishAdjustFood
+    amount: -5
+  - !type:FishAdjustHealth
+    amount: -1
   metabolisms:
     Narcotic:
       effects:
@@ -215,6 +220,11 @@
   physicalDesc: reagent-physical-desc-strong-smelling
   plantMetabolism:
   - !type:PlantAdjustHealth
+    amount: -5
+  fishMetabolism:
+  - !type:FishAdjustFood
+    amount: -5
+  - !type:FishAdjustHealth
     amount: -5
 
 # TODO: Replace these nonstandardized effects with generic brain damage

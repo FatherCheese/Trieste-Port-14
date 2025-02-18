@@ -14,7 +14,7 @@
   - BorgModuleHarvesting
   - SeedExtractorMachineCircuitboard
   - HydroponicsTrayMachineCircuitboard
-  - AquacultureTankMachineCircuitboard
+  - TP14AquacultureTankMachineCircuitboardRecipe
   - ReagentGrinderIndustrialMachineCircuitboard
 
 - type: technology

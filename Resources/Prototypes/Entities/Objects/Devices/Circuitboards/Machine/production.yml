@@ -605,7 +605,7 @@
           defaultPrototype: Beaker
 
 - type: entity
-  id: AquacultureTankMachineCircuitboard
+  id: TP14AquacultureTankMachineCircuitboard
   parent: BaseMachineCircuitboard
   name: aquaculture tank machine board
   description: A machine printed circuit board for an aquaculture tank.
@@ -613,7 +613,7 @@
   - type: Sprite
     state: service
   - type: MachineBoard
-    prototype: AquacultureTankEmpty
+    prototype: TP14AquacultureTankEmpty
     stackRequirements:
       # replacing the console screen
       Glass: 5

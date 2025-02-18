@@ -39,6 +39,11 @@
       amount: -3
     - !type:PlantAdjustHealth
       amount: -1
+  fishMetabolism:
+  - !type:FishAdjustWater
+    amount: -0.5
+  - !type:FishAdjustHealth
+    amount: -1
   metabolisms:
     Poison:
       effects:
@@ -97,6 +102,7 @@
       amount: -4
     - !type:PlantAdjustHealth
       amount: -2
+
   metabolisms:
     Poison:
       effects:

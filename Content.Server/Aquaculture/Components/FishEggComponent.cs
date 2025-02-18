@@ -1,29 +1,37 @@
 using Content.Server.Aquaculture.Systems;
-using Content.Shared.Botany.Components;
-using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
+using Content.Shared.Storage;
+using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
+using Robust.Shared.Utility;
 
 namespace Content.Server.Aquaculture.Components;
 
-[RegisterComponent, Access(typeof(AquacultureSystem))]
-public sealed partial class FishEggComponent : SharedSeedComponent
+/// <summary>
+/// This component handles the different kind of fish eggs.
+/// </summary>
+[RegisterComponent, Access(typeof(FishEggSystem), typeof(FishGrowerSystem))]
+public sealed partial class FishEggComponent : Component
 {
-    /// <summary>
-    ///     Seed data containing information about the plant type & properties that this seed can grow seed. If
-    ///     null, will instead attempt to get data from a seed prototype, if one is defined. See <see
-    ///     cref="FishEggId"/>.
-    /// </summary>
-    [DataField("fishegg")]
-    public FishEggData? FishEgg;
+    [DataField(required: true)]
+    public ResPath FishRsi { get; set; } = default!;
+
+    [DataField]
+    public string FishIconState { get; set; } = "produce";
 
     /// <summary>
-    ///     If not null, overrides the plant's initial health. Otherwise, the plant's initial health is set to the Endurance value.
+    /// The 'produce' items that spawn upon a harvest.
+    /// </summary>
+    [DataField(required: true)]
+    public List<EntitySpawnEntry> FishProduced { get; set; } = new();
+
+    /// <summary>
+    /// The eggs that spawn upon a harvest.
+    /// </summary>
+    [DataField(required: true)]
+    public List<EntitySpawnEntry> EggsProduced { get; set; } = new();
+
+    /// <summary>
+    /// Copied over from SeedPrototype.
     /// </summary>
     [DataField]
-    public float? HealthOverride = null;
-
-    /// <summary>
-    ///     Name of a base seed prototype that is used if <see cref="FishEgg"/> is null.
-    /// </summary>
-    [DataField("fishEggId", customTypeSerializer: typeof(PrototypeIdSerializer<FishEggPrototype>))]
-    public string? FishEggId;
+    public float Potency = 1f;
 }

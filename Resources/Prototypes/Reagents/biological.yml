@@ -41,6 +41,9 @@
   plantMetabolism:
     - !type:PlantAdjustWater
       amount: 0.5
+  fishMetabolism:
+  - !type:FishAdjustWater
+    amount: 0.5
   footstepSound:
     collection: FootstepBlood
     params:

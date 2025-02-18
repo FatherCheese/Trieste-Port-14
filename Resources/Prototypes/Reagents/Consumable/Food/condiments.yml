@@ -158,6 +158,13 @@
     amount: -1
   - !type:PlantAdjustHealth
     amount: -2
+  fishMetabolism:
+  - !type:FishAdjustWater
+    amount: -3
+  - !type:FishAdjustFood
+    amount: -0.3
+  - !type:FishAdjustHealth
+    amount: -2
   metabolisms:
     Food:
       effects:

@@ -3,7 +3,7 @@ using Robust.Shared.Serialization;
 namespace Content.Shared.Aquaculture;
 
 [Serializable, NetSerializable]
-public enum AquacultureTankVisuals
+public enum FishGrowerVisuals
 {
     FishRsi,
     FishIconState,
@@ -11,5 +11,5 @@ public enum AquacultureTankVisuals
     WaterLight,
     NutritionLight,
     HarvestLight,
-    PlanktonLight,
+    WarningLight,
 }

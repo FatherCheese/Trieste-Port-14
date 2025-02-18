@@ -12,6 +12,9 @@
       amount: -2
     - !type:PlantAdjustHealth
       amount: -2
+  fishMetabolism:
+    - !type:FishAdjustHealth
+      amount: -2
 
 - type: reagent
   id: Thermite
