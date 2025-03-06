@@ -618,10 +618,6 @@
       # replacing the console screen
       Glass: 5
       Cable: 2
-    tagRequirements:
-      GlassBeaker:
-        amount: 2
-        defaultPrototype: Beaker
 
 - type: entity
   id: SeedExtractorMachineCircuitboard

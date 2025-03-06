@@ -1,0 +1,12 @@
+- type: entity
+  parent: BaseItem
+  id: TP14FishEggBase
+  abstract: true
+  components:
+  - type: Item
+    size: Tiny
+  - type: FishEgg
+    fishAgeAdult: 5
+  - type: StaticPrice
+    price: 40
+

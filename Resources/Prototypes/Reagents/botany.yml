@@ -214,7 +214,7 @@
   - !type:PlantAdjustHealth
     amount: 0.5
   fishMetabolism:
-    - !type:FishAdjustAmmonia
+    - !type:FishAdjustWaste
       amount: 1
     - !type:FishAdjustHealth
       amount: -1

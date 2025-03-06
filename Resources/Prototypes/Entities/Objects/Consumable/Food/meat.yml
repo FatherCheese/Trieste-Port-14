@@ -1429,6 +1429,42 @@
     defaultTarget: lizard cutlet
 
 - type: entity
+  name: raw rainbow trout filet
+  parent: FoodMeatBase
+  id: TP14FoodMeatRainbowTrout
+  description: It has one hell of a flavor profile.
+  components:
+  - type: FlavorProfile
+    flavors:
+    - fishy
+  - type: Tag
+    tags:
+    - Raw
+    - Meat
+  - type: Sprite
+    state: fish
+  - type: PointLight
+    radius: 1.5
+    energy: 2
+  - type: RgbLightController
+    cycleRate: 0.6
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: FishOil
+        Quantity: 5
+      - ReagentId: SpaceDrugs
+        Quantity: 3
+      - ReagentId: Lipolicide
+        Quantity: 3
+      - ReagentId: MindbreakerToxin
+        Quantity: 2
+      - ReagentId: Happiness
+        Quantity: 2
+      - ReagentId: Psicodine
+        Quantity: 0.6
+
+- type: entity
   name: raw spider cutlet
   parent: FoodMeatBase
   id: FoodMeatSpiderCutlet

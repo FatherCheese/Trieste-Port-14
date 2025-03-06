@@ -131,3 +131,24 @@
         reagents:
         - ReagentId: Vounarin
           Quantity: 4
+
+- type: entity
+  parent: BaseForagePlantRegrowing
+  id: TP14SeaweedRock
+  name: Seaweed
+  description: Seemingly a universal plant, Seaweed is not known for smoking but rather certain food. There's also rumours it can be made into a highly addictive drink.
+  components:
+  - type: Sprite
+    sprite: _TP/Objects/Flora/Forage/seaweed_rock.rsi
+  - type: Icon
+    sprite: _TP/Objects/Flora/Forage/seaweed_rock.rsi
+    state: plant
+  - type: Forage
+    regrowTime: 300
+    loot:
+      All: TP14SeaweedLoot
+
+- type: entityLootTable
+  id: TP14SeaweedLoot
+  entries:
+  - id: TP14FoodSeaweed

@@ -7,6 +7,6 @@
   category: construction-category-utility
   description: An aquaculture tank filter.
   icon:
-    sprite: Objects/Tools/Aquaculture/filter.rsi
+    sprite: _TP/Objects/Aquaculture/Tools/filter.rsi
     state: clean
   objectType: Item

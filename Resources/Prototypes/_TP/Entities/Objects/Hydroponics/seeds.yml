@@ -1,0 +1,33 @@
+- type: entity
+  parent: SeedBase
+  name: packet of seaweed seeds
+  id: TP14SeaweedSeeds
+  components:
+  - type: Seed
+    seedId: TP14Seaweed
+  - type: Sprite
+    sprite: _TP/Objects/Hydroponics/seaweed.rsi
+
+- type: seed
+  id: TP14Seaweed
+  name: seeds-seaweed-name
+  noun: seeds-noun-seeds
+  displayName: seeds-seaweed-display-name
+  plantRsi: _TP/Objects/Hydroponics/seaweed.rsi
+  packetPrototype: TP14SeaweedSeeds
+  productPrototypes:
+  - TP14FoodSeaweed
+  lifespan: 25
+  maturation: 8
+  production: 3
+  growthStages: 4
+  yield: 3
+  potency: 5
+  idealLight: 3
+  waterConsumption: 1.00
+  nutrientConsumption: 0.40
+  chemicals:
+    TP14KelpJuice:
+      Min: 1
+      Max: 20
+      PotencyDivisor: 20

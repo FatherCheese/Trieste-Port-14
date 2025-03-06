@@ -1233,11 +1233,11 @@
     ZombieCocktail: 4
 
 - type: reaction
-  id: KelpShake
+  id: TP14KelpShakeReaction
   reactants:
-    KelpJuice:
+    TP14KelpJuice:
       amount: 3
     UnstableMutagen:
       amount: 1
   products:
-    KelpShake: 4
+    TP14KelpShake: 4

@@ -2094,3 +2094,20 @@
     whitelist:
     - Chef
     - Mime
+
+- type: listing
+  id: TP14UplinkSharkminnowRoe
+  name: uplink-sharkminnow-eggs-name
+  description: uplink-sharkminnow-eggs-desc
+  productEntity: TP14FishEggSharkminnow
+  discountCategory: usualDiscounts
+  discountDownTo:
+    Telecrystal: 1
+  cost:
+    Telecrystal: 3
+  categories:
+  - UplinkJob
+  conditions:
+  - !type:BuyerJobCondition
+    whitelist:
+    - Botanist

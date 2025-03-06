@@ -1,0 +1,45 @@
+- type: entity
+  name: seaweed
+  description: Slimy and green, not to be confused with the froggy queen.
+  parent: FoodProduceBase
+  id: TP14FoodSeaweed
+  components:
+  - type: FlavorProfile
+    flavors:
+    - kelpjuice
+  - type: Sprite
+    sprite: _TP/Objects/Hydroponics/seaweed.rsi
+    state: produce
+  - type: Produce
+    seedId: seaweed
+  - type: Extractable
+    grindableSolutionName: food
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: TP14KelpJuice
+          Quantity: 10
+      plant:
+        maxVol: 5
+
+- type: entity
+  name: rolled seaweed
+  parent: FoodBakingBase
+  id: TP14RolledSeaweed
+  description: Flat and dry seaweed, ready to be wrapped around raw fish.
+  components:
+  - type: FlavorProfile
+    flavors:
+    - kelpjuice
+  - type: Sprite
+    sprite: _TP/Objects/Consumables/Food/seafood.rsi
+    state: rolled-seaweed
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: TP14KelpJuice
+          Quantity: 2.5
