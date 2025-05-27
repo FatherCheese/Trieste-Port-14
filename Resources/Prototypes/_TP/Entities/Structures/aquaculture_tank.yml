@@ -1,0 +1,54 @@
+- type: entity
+  name: aquaculture tank
+  id: TP14AquacultureTank
+  description: A basic tank for the holding, breeding, and aging of fish.
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Clickable
+  - type: InteractionOutline
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.45,-0.45,0.45,0.1"
+        density: 190
+        hard: true
+        mask:
+        - MachineMask
+        layer:
+        - BulletImpassable
+  - type: Anchorable
+  - type: Pullable
+  - type: Sprite
+    sprite: Structures/Hydroponics/containers.rsi
+    noRot: true
+    layers:
+    - state: hydrotray3
+  - type: Appearance
+  - type: Transform
+    anchored: true
+  - type: AquacultureTank
+    water: 100
+    food: 100
+  - type: AmbientSound
+    volume: -9
+    range: 5
+    sound:
+      path: /Audio/Ambience/Objects/flowing_water_open.ogg
+  - type: GuideHelp
+    guides:
+    - Botany
+    - Chemicals
+
+- type: entity
+  parent: TP14AquacultureTank
+  id: TP14AquacultureTankEmpty
+  suffix: Empty
+  components:
+    - type: AquacultureTank
+      water: 0
+      food: 0

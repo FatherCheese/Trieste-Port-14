@@ -11,3 +11,23 @@
     FoodCheeseSlice: 2
     FoodOnionSlice: 2
     FoodBowlBig: 1
+
+- type: microwaveMealRecipe
+  id: TP14RecipeCrabBoiledInDrGibb # Also known as "I wanted to make centcomm cry"
+  name: crab boiled in dr gibb recipe
+  result: TP14FoodCrabBoiledInDrGibb
+  time: 30
+  reagents:
+    DrGibb: 50
+  solids:
+    TP14Crab: 1
+
+- type: microwaveMealRecipe
+  id: TP14RecipeCrabBoiled
+  name: crab boiled in dr gibb recipe
+  result: TP14FoodCrabBoiled
+  time: 30
+  reagents:
+    Water: 50
+  solids:
+    TP14Crab: 1

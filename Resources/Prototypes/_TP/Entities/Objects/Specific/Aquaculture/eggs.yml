@@ -1,0 +1,79 @@
+- type: entity
+  parent: BaseItem
+  id: TP14FishEggsBase
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: _TP/Objects/Specific/Aquaculture/eggs.rsi
+    layers:
+    - state: paper
+      visible: false
+      map: ["enum.PaperLabelVisuals.Layer"]
+      sprite: _TP/Objects/Specific/Aquaculture/eggs.rsi
+  - type: Appearance
+  - type: Item
+    size: Tiny
+  - type: StaticPrice
+    price: 20
+  - type: ContainerContainer
+    containers:
+      paper_label: !type:ContainerSlot
+  - type: PaperLabel
+    labelSlot:
+      insertVerbText: comp-paper-label-insert
+      ejectVerbText: comp-paper-label-eject
+      whitelist:
+        components:
+        - Paper
+      blacklist:
+        tags:
+        - Book
+  - type: GenericVisualizer
+    visuals:
+      enum.PaperLabelVisuals.HasLabel:
+        enum.PaperLabelVisuals.Layer:
+          True: { visible: true }
+          False: { visible: false }
+
+- type: entity
+  parent: TP14FishEggsBase
+  name: Packet of carp eggs
+  description: Contains carp eggs. Just dunk in water!
+  id: TP14CarpEggs
+  components:
+  - type: Sprite
+    layers:
+    - state: carp
+  - type: Fish
+    species: Carp # Name
+    fishType: Pisciform # Enum type
+    result: TP14Carp # The harvest entity ID
+
+- type: entity
+  parent: TP14FishEggsBase
+  name: Packet of salmon eggs
+  description: Contains salmon eggs. Just dunk in water!
+  id: TP14SalmonEggs
+  components:
+  - type: Sprite
+    layers:
+    - state: salmon
+  - type: Fish
+    species: Salmon
+    fishType: Pisciform
+    result: TP14Salmon
+
+
+- type: entity
+  parent: TP14FishEggsBase
+  name: Packet of crab eggs
+  description: Contains crab eggs. Just dunk in water!
+  id: TP14CrabEggs
+  components:
+  - type: Sprite
+    layers:
+    - state: crab
+  - type: Fish
+    species: Crab
+    fishType: Crustacean
+    result: TP14Crab

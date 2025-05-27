@@ -1,0 +1,23 @@
+- type: entity
+  name: fish scoop
+  parent: BaseItem
+  id: TP14FishScoop
+  description: It's used for removing fish from tanks.
+  components:
+  - type: Tag
+    tags:
+    - Scoop
+  - type: Sprite
+    sprite: _TP/Objects/Specific/Aquaculture/Tools/scoop.rsi
+    state: icon
+  - type: MeleeWeapon
+    wideAnimationRotation: 135
+    swingLeft: true
+    damage:
+      types:
+        Blunt: 3
+  - type: Item
+    sprite: _TP/Objects/Specific/Aquaculture/Tools/scoop.rsi
+  - type: PhysicalComposition
+    materialComposition:
+      Plastic: 100

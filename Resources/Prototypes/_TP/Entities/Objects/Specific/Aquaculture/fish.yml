@@ -1,0 +1,74 @@
+- type: entity
+  parent: BaseItem
+  id: TP14FishBase
+  abstract: true
+  components:
+  - type: Appearance
+  - type: Item
+    size: Small
+    shape:
+      - 0,0,1,0
+  - type: StaticPrice
+    price: 40
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: FishOil
+          Quantity: 5
+  - type: Food
+  - type: FlavorProfile
+    flavors:
+    - fishy
+    - oily
+
+- type: entity
+  parent: TP14FishBase
+  name: normal carp
+  description: Your run-of-the-mill fish. Not to be confused with its ferocious space variety!
+  id: TP14Carp
+  components:
+  - type: Sprite
+    sprite: _TP/Objects/Specific/Aquaculture/fish.rsi
+    state: carp
+  - type: Butcherable
+    butcheringType: Knife
+    spawned:
+    - id: TP14FoodMeatFish
+      amount: 1
+    - id: TP14CarpEggs
+      amount: 2
+
+- type: entity
+  parent: TP14FishBase
+  name: salmon
+  description: The freakiest of fish.
+  id: TP14Salmon
+  components:
+  - type: Sprite
+    sprite: _TP/Objects/Specific/Aquaculture/fish.rsi
+    state: salmon
+  - type: Butcherable
+    butcheringType: Knife
+    spawned:
+    - id: TP14FoodMeatFish
+      amount: 2
+    - id: TP14CarpEggs
+      amount: 2
+
+- type: entity
+  parent: TP14FishBase
+  name: crab
+  description: Don't be so crabby!
+  id: TP14Crab
+  components:
+  - type: Sprite
+    sprite: _TP/Objects/Specific/Aquaculture/fish.rsi
+    state: crab
+  - type: Butcherable
+    butcheringType: Knife
+    spawned:
+    - id: TP14FoodMeatFish
+      amount: 2
+    - id: TP14CrabEggs
+      amount: 2
