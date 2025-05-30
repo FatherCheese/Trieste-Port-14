@@ -1,0 +1,36 @@
+- type: entity
+  parent: BaseItem
+  id: TP14FishEggsBase
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: _TP/Objects/Specific/Aquaculture/eggs.rsi
+    layers:
+    - state: paper
+      visible: false
+      map: ["enum.PaperLabelVisuals.Layer"]
+      sprite: _TP/Objects/Specific/Aquaculture/eggs.rsi
+  - type: Appearance
+  - type: Item
+    size: Tiny
+  - type: StaticPrice
+    price: 20
+  - type: ContainerContainer
+    containers:
+      paper_label: !type:ContainerSlot
+  - type: PaperLabel
+    labelSlot:
+      insertVerbText: comp-paper-label-insert
+      ejectVerbText: comp-paper-label-eject
+      whitelist:
+        components:
+        - Paper
+      blacklist:
+        tags:
+        - Book
+  - type: GenericVisualizer
+    visuals:
+      enum.PaperLabelVisuals.HasLabel:
+        enum.PaperLabelVisuals.Layer:
+          True: { visible: true }
+          False: { visible: false }

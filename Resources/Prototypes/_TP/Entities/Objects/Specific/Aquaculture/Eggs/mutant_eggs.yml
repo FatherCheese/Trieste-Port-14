@@ -1,0 +1,172 @@
+# Mutant
+# Tier 1
+- type: entity
+  parent: TP14FishEggsBase
+  name: packet of mothfish eggs
+  description: Contains mothfish eggs. Just dunk in water!
+  id: TP14MothfishEggs
+  components:
+  - type: Sprite
+    layers:
+    - state: mutant-1
+  - type: Fish
+    species: Mothfish
+    fishType: Mutant
+    result: TP14Mothfish
+    compatibleTypes:
+      Pisciform: TP14BassEggs
+    timers:
+      breed: 120
+      consume: 30
+      growth: 120
+      health: 30
+
+- type: entity
+  parent: TP14FishEggsBase
+  name: packet of gummy worm eggs
+  description: Contains gummy worm eggs. Just dunk in water!
+  id: TP14GummyWormEggs
+  components:
+  - type: Sprite
+    layers:
+    - state: mutant-1
+  - type: Fish
+    species: Gummy Worm
+    fishType: Mutant
+    result: TP14GummyWorm
+    compatibleTypes:
+      Pisciform: TP14BassEggs
+    timers:
+      breed: 120
+      consume: 30
+      growth: 120
+      health: 30
+
+# Type 2
+- type: entity
+  parent: TP14FishEggsBase
+  name: packet of silvered fish eggs
+  description: Contains silvered fish eggs. Just dunk in water!
+  id: TP14SilveredFishEggs
+  components:
+  - type: Sprite
+    layers:
+    - state: mutant-2
+  - type: Fish
+    species: Silvered Fish
+    fishType: Mutant
+    result: TP14SilveredFish
+    compatibleTypes:
+      Pisciform: TP14BassEggs
+    timers:
+      breed: 120
+      consume: 30
+      growth: 120
+      health: 30
+
+- type: entity
+  parent: TP14FishEggsBase
+  name: packet of crablegs eggs
+  description: Contains crablegs eggs. Just dunk in water!
+  id: TP14CrablegsEggs
+  components:
+  - type: Sprite
+    layers:
+    - state: mutant-2
+  - type: Fish
+    species: Crablegs
+    fishType: Mutant
+    result: TP14Crablegs
+    compatibleTypes:
+      Pisciform: TP14BassEggs
+    timers:
+      breed: 120
+      consume: 30
+      growth: 120
+      health: 30
+
+# Tier 3
+- type: entity
+  parent: TP14FishEggsBase
+  name: packet of mega lobster eggs
+  description: Contains mega lobster eggs. Just dunk in water!
+  id: TP14MegaLobsterEggs
+  components:
+  - type: Sprite
+    layers:
+    - state: mutant-3
+  - type: Fish
+    species: Mega Lobster
+    fishType: Mutant
+    result: TP14MegaLobster
+    compatibleTypes:
+      Pisciform: TP14BassEggs
+    timers:
+      breed: 120
+      consume: 30
+      growth: 120
+      health: 30
+
+- type: entity
+  parent: TP14FishEggsBase
+  name: packet of gilded fish eggs
+  description: Contains gilded fish eggs. Just dunk in water!
+  id: TP14GildedFishEggs
+  components:
+  - type: Sprite
+    layers:
+    - state: mutant-3
+  - type: Fish
+    species: Gilded Fish
+    fishType: Mutant
+    result: TP14GildedFish
+    compatibleTypes:
+      Pisciform: TP14BassEggs
+    timers:
+      breed: 120
+      consume: 30
+      growth: 120
+      health: 30
+
+# Tier 4
+- type: entity
+  parent: TP14FishEggsBase
+  name: packet of tessarakaidecapus eggs
+  description: Contains tessarakaidecapus eggs. Just dunk in water!
+  id: TP14TessarakaidecapusEggs
+  components:
+  - type: Sprite
+    layers:
+    - state: mutant-4
+  - type: Fish
+    species: Tessarakaidecapus
+    fishType: Mutant
+    result: TP14Tessarakaidecapus
+    compatibleTypes:
+      Pisciform: TP14BassEggs
+    timers:
+      breed: 120
+      consume: 30
+      growth: 120
+      health: 30
+
+- type: entity
+  parent: TP14FishEggsBase
+  name: packet of clown fish eggs
+  description: Contains clown fish eggs. Just dunk in water!
+  id: TP14ClownFishEggs
+  components:
+  - type: Sprite
+    layers:
+    - state: mutant-4
+  - type: Fish
+    species: Clown Fish
+    fishType: Mutant
+    result: TP14ClownFish
+    compatibleTypes:
+      Pisciform: TP14BassEggs
+    timers:
+      breed: 120
+      consume: 30
+      growth: 120
+      health: 30

@@ -1,0 +1,122 @@
+# Crustacean
+# Tier 1
+- type: entity
+  parent: TP14FishEggsBase
+  name: packet of shrimp eggs
+  description: Contains shrimp eggs. Just dunk in water!
+  id: TP14ShrimpEggs
+  components:
+  - type: Sprite
+    layers:
+    - state: crustacean-1
+  - type: Fish
+    species: Shrimp
+    fishType: Crustacean
+    result: TP14Shrimp
+    compatibleTypes: # Breeding Dictionary (fishType: egg proto ID)
+      Aberrant: TP14MegaLobsterEggs
+      Crustacean: TP14CrabEggs
+    timers:
+      breed: 120
+      consume: 30
+      growth: 180
+      health: 30
+
+# Tier 2
+- type: entity
+  parent: TP14FishEggsBase
+  name: packet of crab eggs
+  description: Contains crab eggs. Just dunk in water!
+  id: TP14CrabEggs
+  components:
+  - type: Sprite
+    layers:
+    - state: crustacean-2
+  - type: Fish
+    species: Crab
+    fishType: Crustacean
+    result: TP14Crab
+    compatibleTypes: # Breeding Dictionary (fishType: egg proto ID)
+      Crustacean: TP14CrablegsEggs
+    timers:
+      breed: 120
+      consume: 30
+      growth: 180
+      health: 30
+
+- type: entity
+  parent: TP14FishEggsBase
+  name: packet of sea spider eggs
+  description: Contains sea spider eggs. Just dunk in water!
+  id: TP14SeaSpiderEggs
+  components:
+  - type: Sprite
+    layers:
+    - state: crustacean-2
+  - type: Fish
+    species: Sea Spider
+    fishType: Crustacean
+    result: TP14SeaSpider
+    timers:
+      breed: 120
+      consume: 30
+      growth: 180
+      health: 30
+
+- type: entity
+  parent: TP14FishEggsBase
+  name: packet of trilobite eggs
+  description: Contains trilobite eggs. Just dunk in water!
+  id: TP14TrilobiteEggs
+  components:
+  - type: Sprite
+    layers:
+    - state: crustacean-2
+  - type: Fish
+    species: Trilobite
+    fishType: Crustacean
+    result: TP14Trilobite
+    timers:
+      breed: 120
+      consume: 30
+      growth: 180
+      health: 30
+
+# Tier 3
+- type: entity
+  parent: TP14FishEggsBase
+  name: packet of mantis shrimp eggs
+  description: Contains mantis shrimp eggs. Just dunk in water!
+  id: TP14MantisShrimpEggs
+  components:
+  - type: Sprite
+    layers:
+    - state: crustacean-3
+  - type: Fish
+    species: Mantis Shrimp
+    fishType: Crustacean
+    result: TP14MantisShrimp
+    timers:
+      breed: 120
+      consume: 30
+      growth: 180
+      health: 30
+
+- type: entity
+  parent: TP14FishEggsBase
+  name: packet of crawler eggs
+  description: Contains crawler eggs. Just dunk in water!
+  id: TP14CrawlerEggs
+  components:
+  - type: Sprite
+    layers:
+    - state: crustacean-3
+  - type: Fish
+    species: Crawler
+    fishType: Crustacean
+    result: TP14Crawler
+    timers:
+      breed: 120
+      consume: 30
+      growth: 180
+      health: 30

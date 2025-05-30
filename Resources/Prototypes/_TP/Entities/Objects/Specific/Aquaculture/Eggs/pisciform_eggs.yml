@@ -1,0 +1,163 @@
+# Pisciform
+# Tier 1
+- type: entity
+  parent: TP14FishEggsBase
+  name: packet of carp eggs
+  description: Contains carp eggs. Just dunk in water!
+  id: TP14CarpEggs
+  components:
+  - type: Sprite
+    layers:
+    - state: pisciform-1
+  - type: Fish
+    species: Carp
+    fishType: Pisciform
+    result: TP14Carp
+    compatibleTypes:
+      Pisciform: TP14BassEggs
+      Jelliform: TP14SilveredFishEggs
+      Crustacean: TP14GildedFishEggs
+    timers:
+      breed: 120
+      consume: 30
+      growth: 120
+      health: 30
+
+- type: entity
+  parent: TP14FishEggsBase
+  name: packet of trout eggs
+  description: Contains trout eggs. Just dunk in water!
+  id: TP14TroutEggs
+  components:
+  - type: Sprite
+    layers:
+    - state: pisciform-1
+  - type: Fish
+    species: Trout # Name
+    fishType: Pisciform # Enum type
+    result: TP14Trout # The harvest entity ID
+    compatibleTypes: # Breeding Dictionary (fishType: egg proto ID)
+      Pisciform: TP14SalmonEggs
+    timers: # Timers (string: time in seconds)
+      breed: 120
+      consume: 30
+      growth: 180
+      health: 30
+
+- type: entity
+  parent: TP14FishEggsBase
+  name: packet of space carp eggs
+  description: Contains space carp eggs. Is this a good idea?
+  id: TP14SpaceCarpEggs
+  components:
+  - type: Sprite
+    layers:
+    - state: pisciform-1
+  - type: Fish
+    species: Space Carp # Name
+    fishType: Pisciform # Enum type
+    result: BaseMobCarp # The harvest entity ID
+    timers: # Timers (string: time in seconds)
+      breed: 120
+      consume: 15
+      growth: 180
+      health: 30
+
+# Tier 2
+- type: entity
+  parent: TP14FishEggsBase
+  name: packet of bass eggs
+  description: Contains bass eggs. Just dunk in water!
+  id: TP14BassEggs
+  components:
+  - type: Sprite
+    layers:
+    - state: pisciform-2
+  - type: Fish
+    species: Bass
+    fishType: Pisciform
+    result: TP14Bass
+    timers:
+      breed: 120
+      consume: 30
+      growth: 120
+      health: 30
+
+- type: entity
+  parent: TP14FishEggsBase
+  name: packet of salmon eggs
+  description: Contains salmon eggs. Just dunk in water!
+  id: TP14SalmonEggs
+  components:
+  - type: Sprite
+    layers:
+    - state: pisciform-2
+  - type: Fish
+    species: Salmon
+    fishType: Pisciform
+    result: TP14Salmon
+    timers:
+      breed: 120
+      consume: 30
+      growth: 180
+      health: 30
+
+- type: entity
+  parent: TP14FishEggsBase
+  name: packet of oilfish eggs
+  description: Contains oilfish eggs. Just dunk in water!
+  id: TP14OilfishEggs
+  components:
+  - type: Sprite
+    layers:
+    - state: pisciform-2
+  - type: Fish
+    species: Salmon
+    fishType: Pisciform
+    result: TP14Oilfish
+    timers:
+      breed: 120
+      consume: 30
+      growth: 180
+      health: 30
+
+- type: entity
+  parent: TP14FishEggsBase
+  name: packet of lampfish eggs
+  description: Contains lampfish eggs. Just dunk in water!
+  id: TP14LampfishEggs
+  components:
+  - type: Sprite
+    layers:
+    - state: pisciform-2
+  - type: Fish
+    species: Salmon
+    fishType: Pisciform
+    result: TP14Lampfish
+    compatibleTypes: # Breeding Dictionary (fishType: egg proto ID)
+      Pisciform: TP14MothfishEggs
+    timers:
+      breed: 120
+      consume: 30
+      growth: 180
+      health: 30
+
+# Tier3
+- type: entity
+  parent: TP14FishEggsBase
+  name: packet of blindfish eggs
+  description: Contains blindfish eggs. Just dunk in water!
+  id: TP14BlindfishEggs
+  components:
+  - type: Sprite
+    layers:
+    - state: pisciform-3
+  - type: Fish
+    species: Salmon
+    fishType: Pisciform
+    result: TP14Blindfish
+    timers:
+      breed: 120
+      consume: 30
+      growth: 180
+      health: 30

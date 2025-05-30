@@ -1,0 +1,61 @@
+# Jelliform
+# Tier 2
+- type: entity
+  parent: TP14FishEggsBase
+  name: packet of jellifish eggs
+  description: Contains jellifish eggs. Just dunk in water!
+  id: TP14JellifishEggs
+  components:
+  - type: Sprite
+    layers:
+    - state: jelliform-2
+  - type: Fish
+    species: Jellifish
+    fishType: Jelliform
+    result: TP14Jellifish
+    timers:
+      breed: 120
+      consume: 30
+      growth: 180
+      health: 30
+
+- type: entity
+  parent: TP14FishEggsBase
+  name: packet of jellyworm eggs
+  description: Contains jellyworm eggs. Just dunk in water!
+  id: TP14JellywormEggs
+  components:
+  - type: Sprite
+    layers:
+    - state: jelliform-2
+  - type: Fish
+    species: Jellyworm
+    fishType: Jelliform
+    result: TP14Jellyworm
+    compatibleTypes: # Breeding Dictionary (fishType: egg proto ID)
+      Aberrant: TP14GummyWormEggs
+    timers:
+      breed: 120
+      consume: 30
+      growth: 180
+      health: 30
+
+# Type 3
+- type: entity
+  parent: TP14FishEggsBase
+  name: packet of fireslug eggs
+  description: Contains fireslug eggs. Just dunk in water!
+  id: TP14FireslugEggs
+  components:
+  - type: Sprite
+    layers:
+    - state: jelliform-3
+  - type: Fish
+    species: Fireslug
+    fishType: Jelliform
+    result: TP14Fireslug
+    timers:
+      breed: 120
+      consume: 30
+      growth: 180
+      health: 30

@@ -1,0 +1,102 @@
+# Aberrant
+# Tier 1
+- type: entity
+  parent: TP14FishEggsBase
+  name: packet of eel eggs
+  description: Contains eel eggs. Just dunk in water!
+  id: TP14EelEggs
+  components:
+  - type: Sprite
+    layers:
+    - state: aberrant-1
+  - type: Fish
+    species: Eel
+    fishType: Aberrant
+    result: TP14Eel
+    timers:
+      breed: 120
+      consume: 30
+      growth: 180
+      health: 30
+
+# Tier 2
+- type: entity
+  parent: TP14FishEggsBase
+  name: packet of anglerfish eggs
+  description: Contains anglerfish eggs. Just dunk in water!
+  id: TP14AnglerfishEggs
+  components:
+  - type: Sprite
+    layers:
+    - state: aberrant-2
+  - type: Fish
+    species: Anglerfish
+    fishType: Aberrant
+    result: TP14Anglerfish
+    timers:
+      breed: 120
+      consume: 30
+      growth: 180
+      health: 30
+
+- type: entity
+  parent: TP14FishEggsBase
+  name: packet of eyefish eggs
+  description: Contains eyefish eggs. Just dunk in water!
+  id: TP14EyefishEggs
+  components:
+  - type: Sprite
+    layers:
+    - state: aberrant-2
+  - type: Fish
+    species: Eyefish
+    fishType: Aberrant
+    result: TP14Eyefish
+    timers:
+      breed: 120
+      consume: 30
+      growth: 180
+      health: 30
+
+# Tier 3
+- type: entity
+  parent: TP14FishEggsBase
+  name: packet of honkfish eggs
+  description: Contains honkfish eggs. Just dunk in water!
+  id: TP14HonkfishEggs
+  components:
+  - type: Sprite
+    layers:
+    - state: aberrant-3
+  - type: Fish
+    species: Honkfish
+    fishType: Aberrant
+    result: TP14Honkfish
+    compatibleTypes: # Breeding Dictionary (fishType: egg proto ID)
+      Mutant: TP14ClownFishEggs
+    timers:
+      breed: 120
+      consume: 30
+      growth: 180
+      health: 30
+
+- type: entity
+  parent: TP14FishEggsBase
+  name: packet of heptapus eggs
+  description: Contains heptapus eggs. Just dunk in water!
+  id: TP14HeptapusEggs
+  components:
+  - type: Sprite
+    layers:
+    - state: aberrant-3
+  - type: Fish
+    species: Heptapus
+    fishType: Aberrant
+    result: TP14Heptapus
+    compatibleTypes: # Breeding Dictionary (fishType: egg proto ID)
+      Mutant: TP14TessarakaidecapusEggs
+    timers:
+      breed: 120
+      consume: 30
+      growth: 180
+      health: 30
