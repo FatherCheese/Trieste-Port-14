@@ -35,45 +35,86 @@
           True: { visible: true }
           False: { visible: false }
 
+# Tier 1
 - type: entity
   parent: TP14FishEggsBase
-  name: Packet of carp eggs
+  name: packet of carp eggs
   description: Contains carp eggs. Just dunk in water!
   id: TP14CarpEggs
   components:
   - type: Sprite
     layers:
-    - state: carp
+    - state: pisciform-1
   - type: Fish
-    species: Carp # Name
-    fishType: Pisciform # Enum type
-    result: TP14Carp # The harvest entity ID
+    species: Carp
+    fishType: Pisciform
+    result: TP14Carp
+    compatibleTypes:
+      Pisciform: TP14BassEggs
+    timers:
+      breed: 120
+      consume: 30
+      growth: 120
+      health: 30
+
 
 - type: entity
   parent: TP14FishEggsBase
-  name: Packet of salmon eggs
+  name: packet of trout eggs
+  description: Contains trout eggs. Just dunk in water!
+  id: TP14TroutEggs
+  components:
+  - type: Sprite
+    layers:
+    - state: pisciform-1
+  - type: Fish
+    species: Trout # Name
+    fishType: Pisciform # Enum type
+    result: TP14Trout # The harvest entity ID
+    compatibleTypes: # Breeding Dictionary (fishType: egg proto ID)
+      Pisciform: TP14SalmonEggs
+    timers: # Timers (string: time in seconds)
+      breed: 120
+      consume: 30
+      growth: 180
+      health: 30
+
+# Tier 2
+
+- type: entity
+  parent: TP14FishEggsBase
+  name: packet of bass eggs
+  description: Contains bass eggs. Just dunk in water!
+  id: TP14BassEggs
+  components:
+  - type: Sprite
+    layers:
+    - state: pisciform-2
+  - type: Fish
+    species: Bass
+    fishType: Pisciform
+    result: TP14Bass
+    timers:
+      breed: 120
+      consume: 30
+      growth: 120
+      health: 30
+
+- type: entity
+  parent: TP14FishEggsBase
+  name: packet of salmon eggs
   description: Contains salmon eggs. Just dunk in water!
   id: TP14SalmonEggs
   components:
   - type: Sprite
     layers:
-    - state: salmon
+    - state: pisciform-2
   - type: Fish
     species: Salmon
     fishType: Pisciform
     result: TP14Salmon
-
-
-- type: entity
-  parent: TP14FishEggsBase
-  name: Packet of crab eggs
-  description: Contains crab eggs. Just dunk in water!
-  id: TP14CrabEggs
-  components:
-  - type: Sprite
-    layers:
-    - state: crab
-  - type: Fish
-    species: Crab
-    fishType: Crustacean
-    result: TP14Crab
+    timers:
+      breed: 120
+      consume: 30
+      growth: 180
+      health: 30

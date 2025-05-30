@@ -21,6 +21,9 @@
     flavors:
     - fishy
     - oily
+  - type: FishItem
+
+# Tier 1
 
 - type: entity
   parent: TP14FishBase
@@ -41,8 +44,26 @@
 
 - type: entity
   parent: TP14FishBase
+  name: brown trout
+  description: Certainly a fish of all time.
+  id: TP14Trout
+  components:
+  - type: Sprite
+    sprite: _TP/Objects/Specific/Aquaculture/fish.rsi
+    state: trout
+  - type: Butcherable
+    butcheringType: Knife
+    spawned:
+    - id: TP14FoodMeatFish
+      amount: 2
+    - id: TP14TroutEggs
+      amount: 2
+
+- type: entity
+  parent: TP14FishBase
   name: salmon
   description: The freakiest of fish.
+
   id: TP14Salmon
   components:
   - type: Sprite

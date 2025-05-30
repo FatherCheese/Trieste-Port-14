@@ -1,3 +1,5 @@
+using Robust.Shared.Audio;
+
 namespace Content.Server._TP.Aquaponics.Components;
 
 [RegisterComponent]
@@ -19,23 +21,35 @@ public sealed partial class AquacultureTankComponent : Component
     ///     The total eggs and fish that can be held.
     /// </summary>
     [DataField]
-    public int MaxCapacity = 2;
+    public int EggCapacityMax = 2;
+
+    #region Solutions
+    /// <summary>
+    ///     Container name of the general solutions, such as water and food.
+    /// </summary>
+    [DataField]
+    public string SolutionTank = "tank_main";
 
     /// <summary>
-    ///     How much water is currently in the tank.
+    ///     Container name of the waste solution.
     /// </summary>
-    [DataField("water", required: true)]
-    public int CurrentWater = 100;
+    [DataField]
+    public string SolutionTankWaste = "tank_waste";
 
-    /// <summary>
-    ///     How much food is currently in the tank.
-    /// </summary>
-    [DataField("food", required: true)]
-    public int CurrentFood = 100;
+    [DataField]
+    public float WaterLevel = 100.0f;
 
-    /// <summary>
-    ///     How much waste is currently in the tank.
-    /// </summary>
-    [DataField("waste")]
-    public int CurrentWaste;
+    [DataField]
+    public float FoodLevel = 100.0f;
+
+    [DataField]
+    public float WaterLevelMax = 100.0f;
+
+    [DataField]
+    public float FoodLevelMax = 100.0f;
+
+    [DataField]
+    public SoundSpecifier? WateringSound;
+
+    #endregion
 }

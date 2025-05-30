@@ -1,17 +1,20 @@
 {
-  "version": 1,
-  "license": "CC-BY-SA-3.0",
-  "copyright": "Plate taken from tgstation and modified by Swept at https://github.com/tgstation/tgstation/commit/40d75cc340c63582fb66ce15bf75a36115f6bdaa, Crab taken from tgstation at https://github.com/tgstation/tgstation/commit/53d1f1477d22a11a99c6c6924977cd431075761b and modified by Cookie (FatherCheese) for Trieste Port 14",
-  "size": {
-    "x": 32,
-    "y": 32
-  },
-  "states": [
-    {
-      "name": "crabboiled"
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Plate taken from tgstation and modified by Swept at https://github.com/tgstation/tgstation/commit/40d75cc340c63582fb66ce15bf75a36115f6bdaa, Crab taken from tgstation at https://github.com/tgstation/tgstation/commit/53d1f1477d22a11a99c6c6924977cd431075761b and modified by Cookie (FatherCheese) for Trieste Port 14",
+    "size": {
+        "x": 32,
+        "y": 32
     },
-    {
-      "name": "crabboiledindrgibb"
-    }
-  ]
+    "states": [
+        {
+            "name": "crabboiled"
+        },
+        {
+            "name": "crabboiledindrgibb"
+        },
+        {
+            "name": "fish-sticks"
+        }
+    ]
 }

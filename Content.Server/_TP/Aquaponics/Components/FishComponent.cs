@@ -26,51 +26,39 @@ public sealed partial class FishComponent : Component
     [DataField]
     public Dictionary<FishType, string> CompatibleTypes = new();
 
+    /// <summary>
+    ///     A list of traits that this fish has.
+    /// </summary>
     [DataField]
     public Dictionary<string, float> Traits = new();
 
+    /// <summary>
+    ///     Health. Enough said.
+    /// </summary>
     [DataField]
-    public int Health = 100;
+    public float Health = 100.0f;
     #endregion
 
     #region Timing
     /// <summary>
-    ///     Minimum cooldown for when to age the fish.
+    ///     A list of timers controlling things such as growth, eating, etc.
     /// </summary>
-    [DataField]
-    public float AgingTimeMin = 120f;
-
-    /// <summary>
-    ///     Maximum cooldown for when to age the fish.
-    /// </summary>
-    [DataField]
-    public float AgingTimeMax = 240f;
-
-    /// <summary>
-    ///     When to next try to age.
-    /// </summary>
-    [DataField]
-    public TimeSpan NextGrowth = TimeSpan.Zero;
+    [DataField(required: true)]
+    public Dictionary<string, TimeSpan> Timers = new();
     #endregion
 
-    #region ConsumptionRates
+    #region Miscellaneous
     /// <summary>
-    ///     How much water this fish consumes.
+    ///     The prototype ID of the waste solution/reagent.
     /// </summary>
     [DataField]
-    public float WaterConsumption = 0.3f;
+    public string WasteProduct = "Ammonia";
 
     /// <summary>
-    ///     How much food this fish consumes.
+    ///     Whether this fish causes aberrant damage when harvested.
     /// </summary>
     [DataField]
-    public float FoodConsumption = 0.5f;
-
-    /// <summary>
-    ///     How much waste this fish produces.
-    /// </summary>
-    [DataField]
-    public float WasteProduction = 1.25f;
+    public bool CausesAberrant = false;
     #endregion
 }
 

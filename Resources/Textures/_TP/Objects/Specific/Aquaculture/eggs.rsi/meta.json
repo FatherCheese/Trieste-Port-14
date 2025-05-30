@@ -8,19 +8,55 @@
     },
     "states": [
         {
-            "name": "base"
+            "name": "aberrant-1"
         },
         {
-            "name": "carp"
+            "name": "aberrant-2"
         },
         {
-            "name": "crab"
+            "name": "aberrant-3"
+        },
+        {
+            "name": "base-1"
+        },
+        {
+            "name": "base-2"
+        },
+        {
+            "name": "base-3"
+        },
+        {
+            "name": "crustacean-1"
+        },
+        {
+            "name": "crustacean-2"
+        },
+        {
+            "name": "crustacean-3"
+        },
+        {
+            "name": "mutant-1"
+        },
+        {
+            "name": "mutant-2"
+        },
+        {
+            "name": "mutant-3"
+        },
+        {
+            "name": "mutant-4"
         },
         {
             "name": "paper"
         },
         {
-            "name": "salmon"
+            "name": "pisciform-1"
+        },
+        {
+            "name": "pisciform-2"
+        },
+        {
+            "name": "pisciform-3"
         }
     ]
 }

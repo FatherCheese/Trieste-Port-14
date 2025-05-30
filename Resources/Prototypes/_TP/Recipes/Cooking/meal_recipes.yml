@@ -24,10 +24,20 @@
 
 - type: microwaveMealRecipe
   id: TP14RecipeCrabBoiled
-  name: crab boiled in dr gibb recipe
+  name: boiled crab recipe
   result: TP14FoodCrabBoiled
   time: 30
   reagents:
     Water: 50
   solids:
     TP14Crab: 1
+
+- type: microwaveMealRecipe
+  id: TP14RecipeFishSticks
+  name: fish sticks recipe
+  result: TP14FoodFishSticks
+  time: 15
+  reagents:
+    Flour: 10
+  solids:
+    TP14FoodMeatFish: 1

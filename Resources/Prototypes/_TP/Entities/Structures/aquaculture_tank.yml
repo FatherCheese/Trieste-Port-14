@@ -24,16 +24,77 @@
   - type: Anchorable
   - type: Pullable
   - type: Sprite
-    sprite: Structures/Hydroponics/containers.rsi
-    noRot: true
+    drawdepth: LargeObjects
+    snapCardinals: true
     layers:
-    - state: hydrotray3
+    - sprite: _TP/Structures/Aquaculture/tank.rsi
+      map: [ "beaker" ]
+      state: tank
+    - sprite: _TP/Structures/Aquaculture/overlay.rsi
+      map: [ "alert" ]
+      state: overlay-alert
+      visible: false
+    - sprite: _TP/Structures/Aquaculture/overlay.rsi
+      map: [ "food" ]
+      state: overlay-food
+      visible: false
+    - sprite: _TP/Structures/Aquaculture/overlay.rsi
+      map: [ "harvest" ]
+      state: overlay-harvest
+      visible: false
+    - sprite: _TP/Structures/Aquaculture/overlay.rsi
+      map: [ "health" ]
+      state: overlay-health
+      visible: false
+    - sprite: _TP/Structures/Aquaculture/overlay.rsi
+      map: [ "waste" ]
+      state: overlay-waste
+      visible: false
+    - sprite: _TP/Structures/Aquaculture/overlay.rsi
+      map: [ "water" ]
+      state: overlay-water
+      visible: false
+  - type: GenericVisualizer
+    visuals:
+      enum.SharedFishGrowerVisualState.BeakerAttached:
+        beaker:
+          True: { state: "tank-beaker" }
+          False: { state: "tank" }
+      enum.SharedFishGrowerVisuals.AlertState:
+        alert:
+          True: { visible: true }
+          False: { visible: false }
+      enum.SharedFishGrowerVisuals.FoodState:
+        food:
+          True: { visible: true }
+          False: { visible: false }
+      enum.SharedFishGrowerVisuals.HarvestState:
+        harvest:
+          True: { visible: true }
+          False: { visible: false }
+      enum.SharedFishGrowerVisuals.HealthState:
+        health:
+          True: { visible: true }
+          False: { visible: false }
+      enum.SharedFishGrowerVisuals.WasteState:
+        waste:
+          True: { visible: true }
+          False: { visible: false }
+      enum.SharedFishGrowerVisuals.WaterState:
+        water:
+          True: { visible: true }
+          False: { visible: false }
   - type: Appearance
   - type: Transform
     anchored: true
   - type: AquacultureTank
-    water: 100
-    food: 100
+    waterLevel: 100.0
+    foodLevel: 100.0
+    wateringSound:
+      path: /Audio/Effects/Fluids/slosh.ogg
+      params:
+        volume: -6
+        variation: 0.20
   - type: AmbientSound
     volume: -9
     range: 5
@@ -43,6 +104,20 @@
     guides:
     - Botany
     - Chemicals
+  - type: SolutionContainerManager
+    solutions:
+      tank_main:
+        maxVol: 200
+      tank_waste:
+        maxVol: 100
+  - type: ItemSlots
+    slots:
+      beakerSlot:
+        whitelist:
+          components:
+          - FitsInDispenser
+  - type: RefillableSolution
+    solution: tank_main
 
 - type: entity
   parent: TP14AquacultureTank
@@ -50,5 +125,10 @@
   suffix: Empty
   components:
     - type: AquacultureTank
-      water: 0
-      food: 0
+      waterLevel: 0.0
+      foodLevel: 0.0
+      wasteLevel: 0.0
+    - type: SolutionContainerManager
+      solutions:
+      tank:
+        maxVol: 200
