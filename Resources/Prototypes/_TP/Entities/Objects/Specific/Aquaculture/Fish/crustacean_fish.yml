@@ -1,0 +1,86 @@
+# Tier 1
+- type: entity
+  parent: TP14FishBase
+  id: TP14Shrimp
+  name: shrimp
+  description: A favourite across the cosmos!
+  suffix: crustacean
+  components:
+  - type: Sprite
+    sprite: _TP/Objects/Specific/Aquaculture/fish.rsi
+    state: shrimp
+  - type: Butcherable
+    butcheringType: Knife
+    spawned:
+    - id: TP14ShrimpEggs
+      amount: 2
+
+# Tier 2
+- type: entity
+  parent: TP14FishBase
+  id: TP14Crab
+  name: crab
+  description: It seems quite... crabby.
+  suffix: crustacean
+  components:
+  - type: Sprite
+    sprite: _TP/Objects/Specific/Aquaculture/fish.rsi
+    state: crab
+  - type: Butcherable
+    butcheringType: Knife
+    spawned:
+    - id: TP14CrabEggs
+      amount: 2
+    - id: FoodMeatCrab
+      amount: 2
+
+- type: entity
+  parent: TP14FishBase
+  id: TP14SeaSpider
+  name: sea spider
+  description: A thalassophobe AND arachnophobe's nightmare!
+  suffix: crustacean
+  components:
+  - type: Sprite
+    sprite: _TP/Objects/Specific/Aquaculture/fish.rsi
+    state: sea-spider
+  - type: Butcherable
+    butcheringType: Knife
+    spawned:
+    - id: TP14SeaSpiderEggs
+      amount: 2
+    - id: FoodMeatCrab
+      amount: 1
+
+- type: entity
+  parent: TP14FishBase
+  id: TP14Trilobite
+  name: trilobite
+  description: Brought back from the dead, and now being served from a kitchen near you!
+  suffix: crustacean
+  components:
+  - type: Sprite
+    sprite: _TP/Objects/Specific/Aquaculture/fish.rsi
+    state: trilobite
+  - type: Butcherable
+    butcheringType: Knife
+    spawned:
+    - id: TP14TrilobiteEggs
+      amount: 2
+
+# Tier 3
+- type: entity
+  parent: TP14FishBase
+  id: TP14MantisShrimp
+  name: mantis shrimp
+  description: Has an incredible punch and sees more colors than you do.
+  suffix: crustacean
+  components:
+  - type: Sprite
+    sprite: _TP/Objects/Specific/Aquaculture/fish.rsi
+    state: mantis-shrimp
+  - type: Butcherable
+    butcheringType: Knife
+    spawned:
+    - id: TP14MantisShrimpEggs
+      amount: 2

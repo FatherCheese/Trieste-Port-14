@@ -1,0 +1,124 @@
+# Tier 1
+- type: entity
+  parent: TP14FishBase
+  id: TP14Eel
+  name: eel
+  description: A slithery creature from the depths.
+  suffix: aberrant
+  components:
+  - type: Sprite
+    sprite: _TP/Objects/Specific/Aquaculture/fish.rsi
+    state: eel
+  - type: Butcherable
+    butcheringType: Knife
+    spawned:
+    - id: TP14EelEggs
+      amount: 2
+
+# Tier 2
+- type: entity
+  parent: TP14FishBase
+  id: TP14Anglerfish
+  name: anglerfish
+  description: It lives deeper than most fish and uses a light to attract prey.
+  suffix: aberrant
+  components:
+  - type: Sprite
+    sprite: _TP/Objects/Specific/Aquaculture/fish.rsi
+    state: anglerfish
+  - type: Butcherable
+    butcheringType: Knife
+    spawned:
+    - id: TP14FoodMeatFish
+      amount: 1
+    - id: TP14AnglerfishEggs
+      amount: 2
+    - id: LedLightBulb
+      amount: 1
+
+- type: entity
+  parent: TP14FishBase
+  id: TP14Eyefish
+  name: eyefish
+  description: Incredibly horrifying. It sees all...
+  suffix: aberrant
+  components:
+  - type: Sprite
+    sprite: _TP/Objects/Specific/Aquaculture/fish.rsi
+    state: eyefish
+  - type: Butcherable
+    butcheringType: Knife
+    spawned:
+    - id: TP14FoodMeatFish
+      amount: 1
+    - id: TP14EyefishEggs
+      amount: 2
+    - id: OrganHumanEyes
+      amount: 3
+
+# Tier 3
+- type: entity
+  parent: TP14FishBaseInedible
+  id: TP14Honkfish
+  name: honkfish
+  description: Honk!
+  suffix: aberrant
+  components:
+  - type: Sprite
+    sprite: _TP/Objects/Specific/Aquaculture/fish.rsi
+    state: honkfish
+  - type: Butcherable
+    butcheringType: Knife
+    spawned:
+    - id: TP14FoodMeatFish
+      amount: 2
+    - id: TP14HonkfishEggs
+      amount: 2
+  - type: UseDelay
+    delay: 0.5
+  - type: EmitSoundOnUse
+    sound:
+      collection: BikeHorn
+      params:
+        variation: 0.125
+  - type: EmitSoundOnLand
+    sound:
+      collection: BikeHorn
+      params:
+        variation: 0.125
+  - type: EmitSoundOnTrigger
+    sound:
+      collection: BikeHorn
+      params:
+        variation: 0.125
+  - type: EmitSoundOnActivate
+    sound:
+      collection: BikeHorn
+      params:
+        variation: 0.125
+  - type: EmitSoundOnCollide
+    sound:
+      collection: BikeHorn
+      params:
+        variation: 0.125
+  - type: Tag
+    tags:
+    - BikeHorn
+
+- type: entity
+  parent: TP14FishBase
+  id: TP14Heptapus
+  name: heptapus
+  description: A slightly unusual octopus, in that it has seven legs!
+  suffix: aberrant
+  components:
+  - type: Sprite
+    sprite: _TP/Objects/Specific/Aquaculture/fish.rsi
+    state: heptapus
+  - type: Butcherable
+    butcheringType: Knife
+    spawned:
+    - id: TP14FoodMeatFish
+      amount: 7
+    - id: TP14HeptapusEggs
+      amount: 2

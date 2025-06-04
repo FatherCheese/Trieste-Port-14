@@ -2,9 +2,10 @@
 # Tier 1
 - type: entity
   parent: TP14FishEggsBase
+  id: TP14EelEggs
   name: packet of eel eggs
   description: Contains eel eggs. Just dunk in water!
-  id: TP14EelEggs
+  suffix: aberrant
   components:
   - type: Sprite
     layers:
@@ -12,19 +13,26 @@
   - type: Fish
     species: Eel
     fishType: Aberrant
+    fishTier: 1
     result: TP14Eel
     timers:
-      breed: 120
-      consume: 30
-      growth: 180
-      health: 30
+      breed: [120, 180]    # min, max
+      consume: [30, 90]
+      growth: [160, 200]
+      health: [30, 120]
+      gene: [30, 60]
+    baseTraits:
+      WaterConsumption: 0.20
+      FoodConsumption: 0.5
+      WasteProduction: 2.0
 
 # Tier 2
 - type: entity
   parent: TP14FishEggsBase
+  id: TP14AnglerfishEggs
   name: packet of anglerfish eggs
   description: Contains anglerfish eggs. Just dunk in water!
-  id: TP14AnglerfishEggs
+  suffix: aberrant
   components:
   - type: Sprite
     layers:
@@ -32,18 +40,25 @@
   - type: Fish
     species: Anglerfish
     fishType: Aberrant
+    fishTier: 2
     result: TP14Anglerfish
     timers:
-      breed: 120
-      consume: 30
-      growth: 180
-      health: 30
+      breed: [180, 240]    # min, max
+      consume: [25, 85]
+      growth: [190, 230]
+      health: [45, 135]
+      gene: [30, 60]
+    baseTraits:
+      WaterConsumption: 0.20
+      FoodConsumption: 0.5
+      WasteProduction: 2.0
 
 - type: entity
   parent: TP14FishEggsBase
+  id: TP14EyefishEggs
   name: packet of eyefish eggs
   description: Contains eyefish eggs. Just dunk in water!
-  id: TP14EyefishEggs
+  suffix: aberrant
   components:
   - type: Sprite
     layers:
@@ -51,19 +66,26 @@
   - type: Fish
     species: Eyefish
     fishType: Aberrant
+    fishTier: 2
     result: TP14Eyefish
     timers:
-      breed: 120
-      consume: 30
-      growth: 180
-      health: 30
+      breed: [180, 240]    # min, max
+      consume: [25, 85]
+      growth: [190, 230]
+      health: [45, 135]
+      gene: [30, 60]
+    baseTraits:
+      WaterConsumption: 0.20
+      FoodConsumption: 0.5
+      WasteProduction: 2.0
 
 # Tier 3
 - type: entity
   parent: TP14FishEggsBase
+  id: TP14HonkfishEggs
   name: packet of honkfish eggs
   description: Contains honkfish eggs. Just dunk in water!
-  id: TP14HonkfishEggs
+  suffix: aberrant
   components:
   - type: Sprite
     layers:
@@ -71,20 +93,28 @@
   - type: Fish
     species: Honkfish
     fishType: Aberrant
+    fishTier: 3
     result: TP14Honkfish
     compatibleTypes: # Breeding Dictionary (fishType: egg proto ID)
-      Mutant: TP14ClownFishEggs
+      Mutant:
+        3: TP14ClownFishEggs
     timers:
-      breed: 120
-      consume: 30
-      growth: 180
-      health: 30
+      breed: [300, 360]    # min, max
+      consume: [20, 80]
+      growth: [210, 260]
+      health: [60, 180]
+      gene: [30, 60]
+    baseTraits:
+      WaterConsumption: 0.20
+      FoodConsumption: 0.5
+      WasteProduction: 2.0
 
 - type: entity
   parent: TP14FishEggsBase
+  id: TP14HeptapusEggs
   name: packet of heptapus eggs
   description: Contains heptapus eggs. Just dunk in water!
-  id: TP14HeptapusEggs
+  suffix: aberrant
   components:
   - type: Sprite
     layers:
@@ -92,11 +122,18 @@
   - type: Fish
     species: Heptapus
     fishType: Aberrant
+    fishTier: 3
     result: TP14Heptapus
-    compatibleTypes: # Breeding Dictionary (fishType: egg proto ID)
-      Mutant: TP14TessarakaidecapusEggs
+    compatibleTypes: # Breeding Dictionary (fishType: protoId)
+      Mutant:
+        3: TP14TessarakaidecapusEggs
     timers:
-      breed: 120
-      consume: 30
-      growth: 180
-      health: 30
+      breed: [300, 360]    # min, max
+      consume: [20, 80]
+      growth: [210, 260]
+      health: [60, 180]
+      gene: [30, 60]
+    baseTraits:
+      WaterConsumption: 0.20
+      FoodConsumption: 0.5
+      WasteProduction: 2.0

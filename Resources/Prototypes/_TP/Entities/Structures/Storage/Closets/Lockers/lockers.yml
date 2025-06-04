@@ -1,0 +1,13 @@
+# Cargo
+- type: entity
+  id: TP14LockerAquaculture
+  parent: LockerBase
+  name: aquaponist's locker
+  components:
+  - type: Appearance
+  - type: EntityStorageVisuals
+    stateBaseClosed: hydro # Temporary sprites
+    stateDoorOpen: hydro_open
+    stateDoorClosed: hydro_door
+  - type: AccessReader
+    access: [ [ "Hydroponics" ] ]

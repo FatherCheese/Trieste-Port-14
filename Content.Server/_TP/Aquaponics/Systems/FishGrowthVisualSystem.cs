@@ -46,7 +46,7 @@ public sealed class FishGrowthVisualSystem : EntitySystem
 
         _appearance.SetData(uid, SharedFishGrowerVisuals.HealthState, fish.Health <= 50, appearance);
 
-        _appearance.SetData(uid, SharedFishGrowerVisuals.AlertState, fish.Health <= 0, appearance);
+        _appearance.SetData(uid, SharedFishGrowerVisuals.AlertState, fish.Health <= 0 || fish.GeneticStability <= 0.5, appearance);
 
         _appearance.SetData(uid, SharedFishGrowerVisuals.HarvestState, fish.GrowthStage == FishGrowthStage.Adult, appearance);
     }

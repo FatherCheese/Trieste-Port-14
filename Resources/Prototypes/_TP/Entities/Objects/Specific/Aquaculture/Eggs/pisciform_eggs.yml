@@ -2,9 +2,10 @@
 # Tier 1
 - type: entity
   parent: TP14FishEggsBase
+  id: TP14CarpEggs
   name: packet of carp eggs
   description: Contains carp eggs. Just dunk in water!
-  id: TP14CarpEggs
+  suffix: pisciform
   components:
   - type: Sprite
     layers:
@@ -12,22 +13,26 @@
   - type: Fish
     species: Carp
     fishType: Pisciform
+    fishTier: 1
     result: TP14Carp
     compatibleTypes:
-      Pisciform: TP14BassEggs
-      Jelliform: TP14SilveredFishEggs
-      Crustacean: TP14GildedFishEggs
+      Pisciform:
+        1: TP14BassEggs
+      Jelliform:
+        2: TP14SilveredFishEggs
     timers:
-      breed: 120
-      consume: 30
-      growth: 120
-      health: 30
+      breed: [100, 160]    # min, max
+      consume: [30, 90]
+      growth: [160, 200]
+      health: [30, 120]
+      gene: [30, 60]
 
 - type: entity
   parent: TP14FishEggsBase
+  id: TP14TroutEggs
   name: packet of trout eggs
   description: Contains trout eggs. Just dunk in water!
-  id: TP14TroutEggs
+  suffix: pisciform
   components:
   - type: Sprite
     layers:
@@ -35,20 +40,48 @@
   - type: Fish
     species: Trout # Name
     fishType: Pisciform # Enum type
+    fishTier: 1
     result: TP14Trout # The harvest entity ID
-    compatibleTypes: # Breeding Dictionary (fishType: egg proto ID)
-      Pisciform: TP14SalmonEggs
-    timers: # Timers (string: time in seconds)
-      breed: 120
-      consume: 30
-      growth: 180
-      health: 30
+    compatibleTypes: # Breeding Dictionary (fishType: tier: egg proto ID)
+      Pisciform:
+        1: TP14SalmonEggs
+      Crustacean:
+        2: TP14GildedFishEggs
+    timers:
+      breed: [120, 180]    # min, max
+      consume: [30, 90]
+      growth: [160, 200]
+      health: [30, 120]
+      gene: [30, 60]
 
 - type: entity
   parent: TP14FishEggsBase
+  id: TP14AnchovyEggs
+  name: packet of anchovy eggs
+  description: Contains anchovy eggs. Just dunk in water!
+  suffix: pisciform
+  components:
+  - type: Sprite
+    layers:
+    - state: pisciform-1
+  - type: Fish
+    species: Anchovy # Name
+    fishType: Pisciform # Enum type
+    fishTier: 1 # Int, used for breeding
+    result: TP14Anchovy # The harvest entity ID
+    timers:
+      breed: [60, 120]    # min, max
+      consume: [15, 75]
+      growth: [30, 60]
+      health: [15, 60]
+      gene: [30, 60]
+
+- type: entity
+  parent: TP14FishEggsBase
+  id: TP14SpaceCarpEggs
   name: packet of space carp eggs
   description: Contains space carp eggs. Is this a good idea?
-  id: TP14SpaceCarpEggs
+  suffix: pisciform
   components:
   - type: Sprite
     layers:
@@ -56,19 +89,22 @@
   - type: Fish
     species: Space Carp # Name
     fishType: Pisciform # Enum type
+    fishTier: 1
     result: BaseMobCarp # The harvest entity ID
-    timers: # Timers (string: time in seconds)
-      breed: 120
-      consume: 15
-      growth: 180
-      health: 30
+    timers:
+      breed: [120, 180]    # min, max
+      consume: [30, 90]
+      growth: [240, 360]
+      health: [30, 120]
+      gene: [30, 60]
 
 # Tier 2
 - type: entity
   parent: TP14FishEggsBase
+  id: TP14BassEggs
   name: packet of bass eggs
   description: Contains bass eggs. Just dunk in water!
-  id: TP14BassEggs
+  suffix: pisciform
   components:
   - type: Sprite
     layers:
@@ -76,18 +112,21 @@
   - type: Fish
     species: Bass
     fishType: Pisciform
+    fishTier: 2
     result: TP14Bass
     timers:
-      breed: 120
-      consume: 30
-      growth: 120
-      health: 30
+      breed: [160, 200]    # min, max
+      consume: [25, 85]
+      growth: [190, 230]
+      health: [45, 135]
+      gene: [30, 60]
 
 - type: entity
   parent: TP14FishEggsBase
+  id: TP14SalmonEggs
   name: packet of salmon eggs
   description: Contains salmon eggs. Just dunk in water!
-  id: TP14SalmonEggs
+  suffix: pisciform
   components:
   - type: Sprite
     layers:
@@ -95,18 +134,21 @@
   - type: Fish
     species: Salmon
     fishType: Pisciform
+    fishTier: 2
     result: TP14Salmon
     timers:
-      breed: 120
-      consume: 30
-      growth: 180
-      health: 30
+      breed: [180, 240]    # min, max
+      consume: [25, 85]
+      growth: [190, 230]
+      health: [45, 135]
+      gene: [30, 60]
 
 - type: entity
   parent: TP14FishEggsBase
+  id: TP14OilfishEggs
   name: packet of oilfish eggs
   description: Contains oilfish eggs. Just dunk in water!
-  id: TP14OilfishEggs
+  suffix: pisciform
   components:
   - type: Sprite
     layers:
@@ -114,18 +156,22 @@
   - type: Fish
     species: Salmon
     fishType: Pisciform
+    fishTier: 2
     result: TP14Oilfish
     timers:
-      breed: 120
-      consume: 30
-      growth: 180
-      health: 30
+      breed: [180, 240]    # min, max
+      consume: [25, 85]
+      growth: [190, 230]
+      health: [45, 135]
+      gene: [30, 60]
+    wasteProduct: FishOil
 
 - type: entity
   parent: TP14FishEggsBase
+  id: TP14LampfishEggs
   name: packet of lampfish eggs
   description: Contains lampfish eggs. Just dunk in water!
-  id: TP14LampfishEggs
+  suffix: pisciform
   components:
   - type: Sprite
     layers:
@@ -133,21 +179,25 @@
   - type: Fish
     species: Salmon
     fishType: Pisciform
+    fishTier: 2
     result: TP14Lampfish
     compatibleTypes: # Breeding Dictionary (fishType: egg proto ID)
-      Pisciform: TP14MothfishEggs
+      Pisciform:
+        2: TP14MothfishEggs
     timers:
-      breed: 120
-      consume: 30
-      growth: 180
-      health: 30
+      breed: [180, 240]    # min, max
+      consume: [25, 85]
+      growth: [190, 230]
+      health: [45, 135]
+      gene: [30, 60]
 
 # Tier3
 - type: entity
   parent: TP14FishEggsBase
+  id: TP14BlindfishEggs
   name: packet of blindfish eggs
   description: Contains blindfish eggs. Just dunk in water!
-  id: TP14BlindfishEggs
+  suffix: pisciform
   components:
   - type: Sprite
     layers:
@@ -155,9 +205,11 @@
   - type: Fish
     species: Salmon
     fishType: Pisciform
+    fishTier: 3
     result: TP14Blindfish
     timers:
-      breed: 120
-      consume: 30
-      growth: 180
-      health: 30
+      breed: [300, 360]    # min, max
+      consume: [20, 80]
+      growth: [210, 260]
+      health: [60, 180]
+      gene: [30, 60]

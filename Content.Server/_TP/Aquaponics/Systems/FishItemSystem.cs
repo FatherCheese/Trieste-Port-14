@@ -1,3 +1,4 @@
+using System.Linq;
 using Content.Server._TP.Aquaponics.Components;
 using Content.Server.Kitchen.Components;
 using Content.Shared.Interaction;
@@ -14,7 +15,7 @@ public sealed class FishItemSystem : EntitySystem
         SubscribeLocalEvent<FishItemComponent, AfterInteractUsingEvent>(OnButcherFish);
     }
 
-    private void OnButcherFish(EntityUid uid, FishItemComponent comp, AfterInteractUsingEvent args)
+    private void OnButcherFish(EntityUid uid, FishItemComponent fishItemComp, AfterInteractUsingEvent args)
     {
         if (!TryComp<ButcherableComponent>(args.Target, out var butcherable))
             return;
@@ -30,10 +31,16 @@ public sealed class FishItemSystem : EntitySystem
             var spawned = Spawn(fishEgg.PrototypeId, Transform(args.Target.Value).Coordinates);
             if (TryComp<FishComponent>(spawned, out var fishEggComp))
             {
-                fishEggComp.Traits = new Dictionary<string, float>(comp.Traits);
+                fishEggComp.Traits = fishItemComp.Traits.Select(t => new FishTraitData()
+                    {
+                        TraitName = t.TraitName,
+                        TraitTypes = t.TraitTypes
+                    })
+                    .ToList();
             }
 
             QueueDel(args.Target.Value);
+            args.Handled = true;
         }
     }
 }

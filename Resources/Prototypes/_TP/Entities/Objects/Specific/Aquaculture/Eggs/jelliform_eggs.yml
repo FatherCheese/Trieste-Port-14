@@ -2,9 +2,10 @@
 # Tier 2
 - type: entity
   parent: TP14FishEggsBase
+  id: TP14JellifishEggs
   name: packet of jellifish eggs
   description: Contains jellifish eggs. Just dunk in water!
-  id: TP14JellifishEggs
+  suffix: jelliform
   components:
   - type: Sprite
     layers:
@@ -12,18 +13,20 @@
   - type: Fish
     species: Jellifish
     fishType: Jelliform
+    fishTier: 2
     result: TP14Jellifish
     timers:
-      breed: 120
-      consume: 30
-      growth: 180
-      health: 30
+      breed: [120, 180]    # min, max
+      growth: [160, 200]
+      health: [30, 120]
+      gene: [30, 60]
 
 - type: entity
   parent: TP14FishEggsBase
+  id: TP14JellywormEggs
   name: packet of jellyworm eggs
   description: Contains jellyworm eggs. Just dunk in water!
-  id: TP14JellywormEggs
+  suffix: jelliform
   components:
   - type: Sprite
     layers:
@@ -31,21 +34,24 @@
   - type: Fish
     species: Jellyworm
     fishType: Jelliform
+    fishTier: 2
     result: TP14Jellyworm
-    compatibleTypes: # Breeding Dictionary (fishType: egg proto ID)
-      Aberrant: TP14GummyWormEggs
+    compatibleTypes: # Breeding Dictionary (fishType: fishTier: egg proto ID)
+      Aberrant:
+        1: TP14GummyWormEggs
     timers:
-      breed: 120
-      consume: 30
-      growth: 180
-      health: 30
+      breed: [180, 240]    # min, max - no 'consume' timer since Jellids eat electricity
+      growth: [190, 230]
+      health: [45, 135]
+      gene: [30, 60]
 
 # Type 3
 - type: entity
   parent: TP14FishEggsBase
+  id: TP14FireslugEggs
   name: packet of fireslug eggs
   description: Contains fireslug eggs. Just dunk in water!
-  id: TP14FireslugEggs
+  suffix: jelliform
   components:
   - type: Sprite
     layers:
@@ -53,9 +59,10 @@
   - type: Fish
     species: Fireslug
     fishType: Jelliform
+    fishTier: 3
     result: TP14Fireslug
     timers:
-      breed: 120
-      consume: 30
-      growth: 180
-      health: 30
+      breed: [300, 360]    # min, max
+      growth: [240, 300]
+      health: [60, 180]
+      gene: [30, 60]

@@ -43,10 +43,16 @@ public sealed partial class AquacultureTankComponent : Component
     public float FoodLevel = 100.0f;
 
     [DataField]
+    public float MutagenLevel;
+
+    [DataField]
     public float WaterLevelMax = 100.0f;
 
     [DataField]
     public float FoodLevelMax = 100.0f;
+
+    [DataField]
+    public float MutagenLevelMax = 10.0f;
 
     [DataField]
     public SoundSpecifier? WateringSound;

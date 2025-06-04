@@ -1,0 +1,36 @@
+- type: entityTable
+  id: TP14LockerFillAquaculture
+  table: !type:AllSelector
+    children:
+    - id: TP14EelEggs
+    - id: TP14AnglerfishEggs
+    - id: TP14EyefishEggs
+    - id: TP14HonkfishEggs
+    - id: TP14HeptapusEggs
+    - id: TP14ShrimpEggs
+    - id: TP14CrabEggs
+    - id: TP14SeaSpiderEggs
+    - id: TP14TrilobiteEggs
+    - id: TP14MantisShrimpEggs
+    - id: TP14CrawlerEggs
+    - id: TP14JellifishEggs
+    - id: TP14JellywormEggs
+    - id: TP14FireslugEggs
+    - id: TP14CarpEggs
+    - id: TP14TroutEggs
+    - id: TP14AnchovyEggs
+    - id: TP14BassEggs
+    - id: TP14SalmonEggs
+    - id: TP14OilfishEggs
+    - id: TP14LampfishEggs
+    - id: TP14BlindfishEggs
+
+- type: entity
+  parent: TP14LockerAquaculture
+  id: TP14LockerAquacultureFilled
+  suffix: Filled
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:NestedSelector
+        tableId: TP14LockerFillAquaculture

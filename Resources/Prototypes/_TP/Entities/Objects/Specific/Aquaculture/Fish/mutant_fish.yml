@@ -1,0 +1,179 @@
+# Tier 1
+- type: entity
+  parent: TP14FishBase
+  id: TP14Mothfish
+  name: mothfish
+  description: Similar to mothroaches, in that it eats fibers.
+  suffix: mutant
+  components:
+  - type: Sprite
+    sprite: _TP/Objects/Specific/Aquaculture/fish.rsi
+    state: mothfish
+  - type: Butcherable
+    butcheringType: Knife
+    spawned:
+    - id: TP14JellifishEggs
+      amount: 2
+    - id: MaterialCloth1
+      amount: 1
+
+- type: entity
+  parent: TP14FishBase
+  id: TP14GummyWorm
+  name: gummy worm
+  description: A living snack. Amazing.
+  suffix: mutant
+  components:
+  - type: Sprite
+    sprite: _TP/Objects/Specific/Aquaculture/fish.rsi
+    state: gummy-worm
+  - type: Butcherable
+    butcheringType: Knife
+    spawned:
+    - id: TP14GummyWormEggs
+      amount: 2
+
+# Tier 2
+- type: entity
+  parent: TP14FishBase
+  id: TP14SilveredFish
+  name: silvered fish
+  description: Its scales glitter in the light.
+  suffix: mutant
+  components:
+  - type: Sprite
+    sprite: _TP/Objects/Specific/Aquaculture/fish.rsi
+    state: silvered-fish
+  - type: Butcherable
+    butcheringType: Knife
+    spawned:
+    - id: TP14SilveredFishEggs
+      amount: 2
+  - type: Extractable
+    grindableSolutionName: material
+  - type: SolutionContainerManager
+    solutions:
+      material:
+        reagents:
+        - ReagentId: Silver
+          Quantity: 5
+
+- type: entity
+  parent: TP14FishBase
+  id: TP14Crablegs
+  name: crablegs
+  description: What in the name of science have you created?!
+  suffix: mutant
+  components:
+  - type: Sprite
+    sprite: _TP/Objects/Specific/Aquaculture/fish.rsi
+    state: crablegs
+  - type: Butcherable
+    butcheringType: Knife
+    spawned:
+    - id: TP14CrablegsEggs
+      amount: 2
+    - id: FoodMeatCrab
+      amount: 4
+
+# Tier 3
+- type: entity
+  parent: TP14FishBase
+  id: TP14MegaLobster
+  name: mega lobster
+  description: That's not a lobster, THIS is a lobster!
+  suffix: mutant
+  components:
+  - type: Sprite
+    sprite: _TP/Objects/Specific/Aquaculture/fish.rsi
+    state: megalobster
+  - type: Butcherable
+    butcheringType: Knife
+    spawned:
+    - id: TP14MegaLobsterEggs
+      amount: 2
+    - id: FoodMeatCrab
+      amount: 4
+
+- type: entity
+  parent: TP14FishBase
+  id: TP14GildedFish
+  name: gilded fish
+  description: Its scales glitter in the light. Also it's quite heavy...
+  suffix: mutant
+  components:
+  - type: Sprite
+    sprite: _TP/Objects/Specific/Aquaculture/fish.rsi
+    state: gilded-fish
+  - type: Butcherable
+    butcheringType: Knife
+    spawned:
+    - id: TP14GildedFishEggs
+      amount: 2
+    - id: TP14FoodMeatFish
+      amount: 2
+  - type: Extractable
+    grindableSolutionName: material
+  - type: SolutionContainerManager
+    solutions:
+      material:
+        reagents:
+        - ReagentId: Gold
+          Quantity: 5
+
+# Tier 4
+- type: entity
+  parent: TP14FishBase
+  id: TP14Tessarakaidecapus
+  name: tessarakaidecapus
+  description: An unholy abomination of an octopus. It has sixteen legs!
+  suffix: mutant
+  components:
+  - type: Sprite
+    sprite: _TP/Objects/Specific/Aquaculture/fish.rsi
+    state: tessarakaidecapus
+  - type: Butcherable
+    butcheringType: Knife
+    spawned:
+    - id: TP14TessarakaidecapusEggs
+      amount: 2
+    - id: TP14FoodMeatFish
+      amount: 16
+
+- type: entity
+  parent: TP14FishBaseInedible
+  id: TP14ClownFish
+  name: clown fish
+  description: Oh no.
+  suffix: mutant
+  components:
+  - type: Sprite
+    sprite: _TP/Objects/Specific/Aquaculture/fish.rsi
+    state: clown-fish
+  - type: Butcherable
+    butcheringType: Knife
+    spawned:
+    - id: TP14ClownFishEggs
+      amount: 2
+    - id: TP14FoodMeatFish
+      amount: 2
+  - type: EmitSoundOnUse
+    sound:
+      collection: ClownRecorder
+  - type: EmitSoundOnLand
+    sound:
+      collection: ClownRecorder
+  - type: EmitSoundOnActivate
+    sound:
+      collection: ClownRecorder
+  - type: EmitSoundOnTrigger
+    sound:
+      collection: ClownRecorder
+  - type: EmitSoundOnCollide
+    sound:
+      collection: ClownRecorder
+  - type: UseDelay
+    delay: 30.0
+  - type: Tag
+    tags:
+    - ClownRecorder

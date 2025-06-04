@@ -2,9 +2,10 @@
 # Tier 1
 - type: entity
   parent: TP14FishEggsBase
+  id: TP14ShrimpEggs
   name: packet of shrimp eggs
   description: Contains shrimp eggs. Just dunk in water!
-  id: TP14ShrimpEggs
+  suffix: crustacean
   components:
   - type: Sprite
     layers:
@@ -12,22 +13,29 @@
   - type: Fish
     species: Shrimp
     fishType: Crustacean
+    fishTier: 1
     result: TP14Shrimp
-    compatibleTypes: # Breeding Dictionary (fishType: egg proto ID)
-      Aberrant: TP14MegaLobsterEggs
-      Crustacean: TP14CrabEggs
+    compatibleTypes: # Breeding Dictionary (fishType: fishTier: egg proto ID)
+      Crustacean:
+        1: TP14CrabEggs
     timers:
-      breed: 120
-      consume: 30
-      growth: 180
-      health: 30
+      breed: [60, 120]    # min, max
+      consume: [30, 90]
+      growth: [120, 180]
+      health: [30, 60]
+      gene: [30, 60]
+    baseTraits:
+      WaterConsumption: 0.20
+      FoodConsumption: 0.5
+      WasteProduction: 2.0
 
 # Tier 2
 - type: entity
   parent: TP14FishEggsBase
+  id: TP14CrabEggs
   name: packet of crab eggs
   description: Contains crab eggs. Just dunk in water!
-  id: TP14CrabEggs
+  suffix: crustacean
   components:
   - type: Sprite
     layers:
@@ -35,20 +43,28 @@
   - type: Fish
     species: Crab
     fishType: Crustacean
+    fishTier: 2
     result: TP14Crab
-    compatibleTypes: # Breeding Dictionary (fishType: egg proto ID)
-      Crustacean: TP14CrablegsEggs
+    compatibleTypes: # Breeding Dictionary (fishType: fishTier: egg proto ID)
+      Crustacean:
+        2: TP14CrablegEggs
     timers:
-      breed: 120
-      consume: 30
-      growth: 180
-      health: 30
+      breed: [180, 240]    # min, max
+      consume: [25, 85]
+      growth: [190, 230]
+      health: [45, 135]
+      gene: [30, 60]
+    baseTraits:
+      WaterConsumption: 0.20
+      FoodConsumption: 0.5
+      WasteProduction: 2.0
 
 - type: entity
   parent: TP14FishEggsBase
+  id: TP14SeaSpiderEggs
   name: packet of sea spider eggs
   description: Contains sea spider eggs. Just dunk in water!
-  id: TP14SeaSpiderEggs
+  suffix: crustacean
   components:
   - type: Sprite
     layers:
@@ -56,18 +72,25 @@
   - type: Fish
     species: Sea Spider
     fishType: Crustacean
+    fishTier: 2
     result: TP14SeaSpider
     timers:
-      breed: 120
-      consume: 30
-      growth: 180
-      health: 30
+      breed: [180, 240]    # min, max
+      consume: [25, 85]
+      growth: [190, 230]
+      health: [45, 135]
+      gene: [30, 60]
+    baseTraits:
+      WaterConsumption: 0.20
+      FoodConsumption: 0.5
+      WasteProduction: 2.0
 
 - type: entity
   parent: TP14FishEggsBase
+  id: TP14TrilobiteEggs
   name: packet of trilobite eggs
   description: Contains trilobite eggs. Just dunk in water!
-  id: TP14TrilobiteEggs
+  suffix: crustacean
   components:
   - type: Sprite
     layers:
@@ -75,19 +98,26 @@
   - type: Fish
     species: Trilobite
     fishType: Crustacean
+    fishTier: 2
     result: TP14Trilobite
     timers:
-      breed: 120
-      consume: 30
-      growth: 180
-      health: 30
+      breed: [180, 240]    # min, max
+      consume: [25, 85]
+      growth: [190, 230]
+      health: [45, 135]
+      gene: [30, 60]
+    baseTraits:
+      WaterConsumption: 0.20
+      FoodConsumption: 0.5
+      WasteProduction: 2.0
 
 # Tier 3
 - type: entity
   parent: TP14FishEggsBase
+  id: TP14MantisShrimpEggs
   name: packet of mantis shrimp eggs
   description: Contains mantis shrimp eggs. Just dunk in water!
-  id: TP14MantisShrimpEggs
+  suffix: crustacean
   components:
   - type: Sprite
     layers:
@@ -95,18 +125,25 @@
   - type: Fish
     species: Mantis Shrimp
     fishType: Crustacean
+    fishTier: 3
     result: TP14MantisShrimp
     timers:
-      breed: 120
-      consume: 30
-      growth: 180
-      health: 30
+      breed: [240, 300]    # min, max
+      consume: [20, 80]
+      growth: [210, 260]
+      health: [60, 180]
+      gene: [30, 60]
+    baseTraits:
+      WaterConsumption: 0.20
+      FoodConsumption: 0.5
+      WasteProduction: 2.0
 
 - type: entity
   parent: TP14FishEggsBase
+  id: TP14CrawlerEggs
   name: packet of crawler eggs
   description: Contains crawler eggs. Just dunk in water!
-  id: TP14CrawlerEggs
+  suffix: crustacean
   components:
   - type: Sprite
     layers:
@@ -114,9 +151,18 @@
   - type: Fish
     species: Crawler
     fishType: Crustacean
+    fishTier: 3
     result: TP14Crawler
+    compatibleTypes: # Breeding Dictionary (fishType: fishTier: egg proto ID)
+      Aberrant:
+        3: TP14MegaLobsterEggs
     timers:
-      breed: 120
-      consume: 30
-      growth: 180
-      health: 30
+      breed: [300, 360]    # min, max
+      consume: [20, 80]
+      growth: [210, 260]
+      health: [60, 180]
+      gene: [30, 60]
+    baseTraits:
+      WaterConsumption: 0.20
+      FoodConsumption: 0.5
+      WasteProduction: 2.0

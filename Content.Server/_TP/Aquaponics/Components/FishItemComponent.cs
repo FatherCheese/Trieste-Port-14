@@ -7,5 +7,5 @@ public sealed partial class FishItemComponent : Component
     ///     Fish traits, copied over from FishComponent on item spawn.
     /// </summary>
     [DataField]
-    public Dictionary<string, float> Traits = new();
+    public List<FishTraitData> Traits = new();
 }

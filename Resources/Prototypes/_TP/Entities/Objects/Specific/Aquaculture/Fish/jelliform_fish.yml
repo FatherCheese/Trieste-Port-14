@@ -1,0 +1,55 @@
+# Tier 2
+- type: entity
+  parent: TP14FishBase
+  id: TP14Jellifish
+  name: jellifish
+  description: Thought to be the predecessors of, or at least related to, Jellids.
+  suffix: jelliform
+  components:
+  - type: Sprite
+    sprite: _TP/Objects/Specific/Aquaculture/fish.rsi
+    state: jellifish
+  - type: Butcherable
+    butcheringType: Knife
+    spawned:
+    - id: TP14JellifishEggs
+      amount: 2
+    - id: FoodMeatSlime
+      amount: 2
+
+- type: entity
+  parent: TP14FishBase
+  id: TP14Jellyworm
+  name: jellyworm
+  description: Not to be confused with the sweet, sweet, gummy worms snack!
+  suffix: jelliform
+  components:
+  - type: Sprite
+    sprite: _TP/Objects/Specific/Aquaculture/fish.rsi
+    state: jellyworm
+  - type: Butcherable
+    butcheringType: Knife
+    spawned:
+    - id: TP14JellywormEggs
+      amount: 2
+    - id: FoodMeatSlime
+      amount: 1
+
+# Tier 3
+- type: entity
+  parent: TP14FishBase
+  id: TP14Fireslug
+  name: fireslug
+  description: It's warm to the touch.
+  suffix: jelliform
+  components:
+  - type: Sprite
+    sprite: _TP/Objects/Specific/Aquaculture/fish.rsi
+    state: fireslug
+  - type: Butcherable
+    butcheringType: Knife
+    spawned:
+    - id: TP14FireslugEggs
+      amount: 2
+    - id: FoodMeatSlime
+      amount: 2

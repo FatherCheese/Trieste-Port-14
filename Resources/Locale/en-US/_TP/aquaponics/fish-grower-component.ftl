@@ -10,6 +10,7 @@ fish-grower-component-food-volume = Food: [color=orange]{$foodVol}[/color]
 fish-grower-component-waste-volume = The [color=red]waste level alert[/color] is blinking.
 fish-grower-component-health = [color=red]Some of the fish look ill![/color]
 fish-grower-component-dead = [color=red]The tank is full of dead fish.[/color]
+fish-grower-component-unstable = [color=red]The fish is genetically unstable![/color]
 fish-grower-component-fish-young = The tank currently contains {$fish} {$fishAge}
 fish-grower-component-fish = The tank currently contains {$fishAge} {$fish}
 fish-grower-component-no-fish = [color=red]The tank has no fish![/color]

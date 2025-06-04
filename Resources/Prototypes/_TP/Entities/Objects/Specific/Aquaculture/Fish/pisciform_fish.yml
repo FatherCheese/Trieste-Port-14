@@ -1,0 +1,133 @@
+# Tier 1
+- type: entity
+  parent: TP14FishBase
+  name: anchovy
+  description: Ew, anchovies? Who eats those?
+  id: TP14Anchovy
+  components:
+  - type: Sprite
+    sprite: _TP/Objects/Specific/Aquaculture/fish.rsi
+    state: anchovy
+
+- type: entity
+  parent: TP14FishBase
+  name: normal carp
+  description: Your run-of-the-mill fish. Not to be confused with its ferocious space variety!
+  id: TP14Carp
+  components:
+  - type: Sprite
+    sprite: _TP/Objects/Specific/Aquaculture/fish.rsi
+    state: carp
+  - type: Butcherable
+    butcheringType: Knife
+    spawned:
+    - id: TP14FoodMeatFish
+      amount: 1
+    - id: TP14CarpEggs
+      amount: 2
+
+- type: entity
+  parent: TP14FishBase
+  name: brown trout
+  description: Certainly a fish of all time.
+  id: TP14Trout
+  components:
+  - type: Sprite
+    sprite: _TP/Objects/Specific/Aquaculture/fish.rsi
+    state: trout
+  - type: Butcherable
+    butcheringType: Knife
+    spawned:
+    - id: TP14FoodMeatFish
+      amount: 2
+    - id: TP14TroutEggs
+      amount: 2
+
+# Tier 2
+- type: entity
+  parent: TP14FishBase
+  id: TP14Bass
+  name: bass
+  description: A ray-finned fish. Not to be confused with a guitar.
+  suffix: pisciform
+  components:
+  - type: Sprite
+    sprite: _TP/Objects/Specific/Aquaculture/fish.rsi
+    state: bass
+  - type: Butcherable
+    butcheringType: Knife
+    spawned:
+    - id: TP14FoodMeatFish
+      amount: 2
+    - id: TP14CarpEggs
+      amount: 2
+
+- type: entity
+  parent: TP14FishBase
+  name: salmon
+  description: Its eggs are a delicacy!
+  id: TP14Salmon
+  components:
+  - type: Sprite
+    sprite: _TP/Objects/Specific/Aquaculture/fish.rsi
+    state: salmon
+  - type: Butcherable
+    butcheringType: Knife
+    spawned:
+    - id: TP14FoodMeatFish
+      amount: 4
+    - id: TP14SalmonEggs
+      amount: 2
+
+- type: entity
+  parent: TP14FishBaseInedible
+  id: TP14Oilfish
+  name: oilfish
+  description: Native to Trieste, it contains more oil than the average fish.
+  suffix: pisciform
+  components:
+  - type: Sprite
+    sprite: _TP/Objects/Specific/Aquaculture/fish.rsi
+    state: oilfish
+  - type: Butcherable
+    butcheringType: Knife
+    spawned:
+    - id: TP14OilfishEggs
+      amount: 2
+
+- type: entity
+  parent: TP14FishBase
+  id: TP14Lampfish
+  name: oilfish
+  description: A brightly lit fish. Moths seem to love it!
+  suffix: pisciform
+  components:
+  - type: Sprite
+    sprite: _TP/Objects/Specific/Aquaculture/fish.rsi
+    state: lampfish
+  - type: Butcherable
+    butcheringType: Knife
+    spawned:
+    - id: TP14LampfishEggs
+      amount: 2
+    - id: TP14FoodMeatFish
+      amount: 1
+
+# Tier 3
+- type: entity
+  parent: TP14FishBase
+  id: TP14Blindfish
+  name: blindfish
+  description: Also known as a fsh! Get it? No eyes?
+  suffix: pisciform
+  components:
+  - type: Sprite
+    sprite: _TP/Objects/Specific/Aquaculture/fish.rsi
+    state: blindfish
+  - type: Butcherable
+    butcheringType: Knife
+    spawned:
+    - id: TP14BlindfishEggs
+      amount: 2
+    - id: TP14FoodMeatFish
+      amount: 2
