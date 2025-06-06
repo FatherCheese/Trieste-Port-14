@@ -18,7 +18,6 @@ using Robust.Shared.Random;
 using Robust.Shared.Serialization;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.Array;
 using Robust.Shared.Utility;
-using Content.Shared.Plankton;
 
 namespace Content.Shared.Chemistry.Reagent
 {
@@ -101,26 +100,6 @@ namespace Content.Shared.Chemistry.Reagent
         [DataField]
         public bool MetamorphicChangeColor { get; private set; } = true;
 
-
-    // List of plankton components this reagent can contain
-    public List<PlanktonComponent> PlanktonComponents { get; set; } = new List<PlanktonComponent>();
-
-    // Method to check if the reagent contains plankton
-    public bool HasPlankton => PlanktonComponents.Any();
-
-    // Method to add plankton to the reagent (to be added in a solution later)
-    public void AddPlankton(PlanktonComponent plankton)
-    {
-        PlanktonComponents.Add(plankton);
-    }
-
-    // Method to remove plankton from the reagent
-    public void RemovePlankton(PlanktonComponent plankton)
-    {
-        PlanktonComponents.Remove(plankton);
-    }
-
-
         /// <summary>
         /// If not null, makes something slippery. Also defines slippery interactions like stun time and launch mult.
         /// </summary>
@@ -166,16 +145,16 @@ namespace Content.Shared.Chemistry.Reagent
         [DataField]
         public bool WorksOnTheDead;
 
-        [DataField(serverOnly: true)]
+        [DataField]
         public FrozenDictionary<ProtoId<MetabolismGroupPrototype>, ReagentEffectsEntry>? Metabolisms;
 
-        [DataField(serverOnly: true)]
+        [DataField]
         public Dictionary<ProtoId<ReactiveGroupPrototype>, ReactiveReagentEffectEntry>? ReactiveEffects;
 
         [DataField(serverOnly: true)]
         public List<ITileReaction> TileReactions = new(0);
 
-        [DataField("plantMetabolism", serverOnly: true)]
+        [DataField("plantMetabolism")]
         public List<EntityEffect> PlantMetabolisms = new(0);
 
         [DataField]

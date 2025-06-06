@@ -5,10 +5,10 @@
   description: A device capable to acessing and outputting the information inside a data pearl.
   components:
     - type: Sprite
-      sprite: Objects/Specific/Planktonics.rsi
+      sprite: _TP/Objects/planktonics.rsi
       state: icon
     - type: Item
-      sprite: Objects/Specific/Planktonics.rsi
+      sprite: _TP/Objects/planktonics.rsi
     - type: PearlScanner
     - type: UseDelay
       delay: 5
