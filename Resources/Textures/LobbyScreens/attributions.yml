@@ -13,6 +13,11 @@
   copyright: "PixeltheAertist"
   source: "My own two hands"
 
+- files: ["SweetwaterCam.webp"]
+  license: "CC-BY-NC-SA-3.0"
+  copyright: "PixeltheAertist"
+  source: "My own two hands"
+
 - files: ["warden.webp", "pharmacy.webp"]
   license: "CC-BY-NC-SA-3.0"
   copyright: "Solbusaur#4343 (220208697429852160) on discord"

@@ -9,3 +9,7 @@
 - type: lobbyBackground
   id: TriesteFlashStorm
   background: /Textures/LobbyScreens/triesteflashstorm.webp
+
+- type: lobbyBackground
+  id: SweetwaterCam
+  background: /Textures/LobbyScreens/SweetwaterCam.webp
