@@ -429,8 +429,10 @@ public sealed partial class PlanktonResearchSystem : EntitySystem
     private void HandlePlanktonScan(Components.Machines.PlanktonAnalysisComputerComponent computerComp, PlanktonVialComponent vialComp, EntityUid user)
     {
         // Check if the vial has a plankton component inside. If not, then return.
-        if (!TryComp<PlanktonComponent>(vialComp.ContainedSpecimen, out var planktonComp))
+        if (vialComp.Plankton == null)
             return;
+
+        var plankton = vialComp.Plankton;
 
         // Check if the computer already has a sample. If so, then return
         // and display a client-side popup message.
@@ -443,11 +445,11 @@ public sealed partial class PlanktonResearchSystem : EntitySystem
         // Set the computer sample to a copy of the plankton sample values,
         // set the paper-generated flag to false,
         // and set the sample load time to the current time.
-        computerComp.ScannedSpeciesName = planktonComp.SpeciesName;
-        computerComp.ScannedCharacteristics = planktonComp.Characteristics;
-        computerComp.ScannedDiet = planktonComp.Diet;
-        computerComp.ScannedTempRangeLow = planktonComp.TemperatureToleranceLow;
-        computerComp.ScannedTempRangeHigh = planktonComp.TemperatureToleranceHigh;
+        computerComp.ScannedSpeciesName = plankton.SpeciesName;
+        computerComp.ScannedCharacteristics = plankton.Characteristics;
+        computerComp.ScannedDiet = plankton.Diet;
+        computerComp.ScannedTempRangeLow = plankton.TemperatureToleranceLow;
+        computerComp.ScannedTempRangeHigh = plankton.TemperatureToleranceHigh;
 
         computerComp.PaperGenerated = false;
         computerComp.SampleLoadTime = _gameTiming.CurTime;
@@ -457,7 +459,8 @@ public sealed partial class PlanktonResearchSystem : EntitySystem
             PopupType.Medium);
 
         // public popup message
-        _popup.PopupEntity(Loc.GetString("plankton-analysis-component-sample-loaded-others-message", ("user", user)),
+        var username = MetaData(user).EntityName;
+        _popup.PopupEntity(Loc.GetString("plankton-analysis-component-sample-loaded-others-message", ("user", username)),
             user,
             Filter.PvsExcept(user),
             true,

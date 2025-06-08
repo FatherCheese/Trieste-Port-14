@@ -6,6 +6,7 @@ using Content.Shared.Examine;
 using Content.Shared.Interaction;
 using Content.Shared.Popups;
 using Robust.Server.GameObjects;
+using Robust.Shared.Player;
 using Robust.Shared.Timing;
 
 namespace Content.Server._TP.Planktology.Systems.MachineSystems;
@@ -101,7 +102,7 @@ public sealed class PlanktonSeparatorSystem : EntitySystem
             return;
         }
 
-        if (vialComp.ContainedSpecimen != null)
+        if (vialComp.Plankton != null)
         {
             _popup.PopupEntity(Loc.GetString("plankton-vial-full-message"), uid, PopupType.Medium);
             return;
@@ -110,11 +111,23 @@ public sealed class PlanktonSeparatorSystem : EntitySystem
         // Now if we're at this point, store the first plankton in the separator
         // as a variable and remove it from the separator.
         // Then we move it to the vial and set the parent to the used item.
-        var planktonUid = separatorComp.StoredPlankton[0];
+        var storedPlankton = separatorComp.StoredPlankton[0];
         separatorComp.StoredPlankton.RemoveAt(0);
-        vialComp.ContainedSpecimen = planktonUid;
+        Dirty(uid, separatorComp);
 
-        _transformSystem.SetParent(planktonUid, args.Used);
+        vialComp.Plankton = storedPlankton;
+        Dirty(args.Used, vialComp);
+
+        // client-only popup
+        _popup.PopupClient(Loc.GetString("plankton-separator-transfer-message"), uid, PopupType.Medium);
+
+        // public popup
+        var username = MetaData(args.User).EntityName;
+        _popup.PopupEntity(Loc.GetString("plankton-separator-transfer-others-message", ("user", username)),
+            args.User,
+            Filter.PvsExcept(args.User),
+            true,
+            PopupType.Medium);
 
         args.Handled = true;
     }
@@ -159,7 +172,7 @@ public sealed class PlanktonSeparatorSystem : EntitySystem
     }
 
     /// <summary>
-    ///     The method to create plankton from the Seawater.
+    ///     The method to create plankton while in water.
     /// </summary>
     /// <param name="uid">PlanktonSeparator UID</param>
     /// <param name="separatorComp">PlanktonSeparator Component</param>
@@ -172,17 +185,30 @@ public sealed class PlanktonSeparatorSystem : EntitySystem
             return false;
         }
 
-        var planktonOne = _planktonSeparatorGenerator.GenerateCompletePlankton();
-        var planktonTwo = _planktonSeparatorGenerator.GenerateCompletePlankton();
+        // A loop to generate and assign new plankton.
+        // Make a popup message to indicate it was successful,
+        // and we mark dirty at the end for networking purposes.
+        for (var i = 0; i < separatorComp.CreatedPlankton; i++)
+        {
+            var generatedPlankton = _planktonSeparatorGenerator.GenerateCompletePlankton();
+            var newPlankton = new PlanktonInstance
+            {
+                SpeciesName = generatedPlankton.name,
+                Characteristics = generatedPlankton.characteristics,
+                Diet = generatedPlankton.diet,
+                SpeciesSize = generatedPlankton.size,
+            };
 
-        Spawn("Plankton", Transform(uid).Coordinates);
-        Spawn("Plankton", Transform(uid).Coordinates);
+            separatorComp.StoredPlankton.Add(newPlankton);
+        }
 
+        _popup.PopupEntity(Loc.GetString("plankton-separator-generated-message"), uid, PopupType.Medium);
+        Dirty(uid, separatorComp);
         return true;
     }
 
     /// <summary>
-    ///     A method to check if the separator is in SeaWater.
+    ///     A method to check if the separator is in water.
     /// </summary>
     /// <param name="separatorUid">PlanktonSeparator UID</param>
     /// <returns>Return true if the water amount is above 0.0f</returns>

@@ -42,7 +42,7 @@ public sealed partial class PlanktonSeparatorComponent : Component
     ///     A list of plankton UIDs currently in the separator.
     /// </summary>
     [DataField]
-    public List<EntityUid> StoredPlankton { get; set; } = new();
+    public List<PlanktonInstance> StoredPlankton { get; set; } = new();
 
     /// <summary>
     ///     The maximum plankton that can be stored.

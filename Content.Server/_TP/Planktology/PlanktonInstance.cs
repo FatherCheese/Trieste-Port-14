@@ -1,17 +1,12 @@
 using Content.Shared._TP.Planktology;
 using Content.Shared.Chemistry.Reagent;
 
-namespace Content.Server._TP.Planktology.Components;
+namespace Content.Server._TP.Planktology;
 
-/// <summary>
-///     This component allows something to be a plankton colony.
-///     This is mainly used by canisters and separators.
-///     NOTE: A lot of the data needs to be GENERATED. These are mainly placeholders!
-/// </summary>
-[RegisterComponent]
-public sealed partial class PlanktonComponent : Component
+[DataDefinition]
+public sealed partial class PlanktonInstance
 {
-    #region Temperature
+        #region Temperature
     /// <summary>
     ///     The minimum temperature that plankton can tolerate.
     ///     Temperature is stored in the tank, and this value
@@ -87,22 +82,6 @@ public sealed partial class PlanktonComponent : Component
     /// </summary>
     [DataField]
     public ReagentId? ProducedReagent { get; set; } = null;
-    #endregion
-
-    #region ResearchSpecific
-    /// <summary>
-    ///     Whether the plank has been fully analyzed/researched.
-    ///     The default value is obviously false.
-    /// </summary>
-    [DataField]
-    public bool IsAnalyzed { get; set; } = false;
-
-    /// <summary>
-    ///     Bitflags for which traits have been discovered through research.
-    ///     The default value is None.
-    /// </summary>
-    [DataField]
-    public PlanktonCharacteristics DiscoveredTraits { get; set; } = PlanktonCharacteristics.None;
     #endregion
 
     #region Timers

@@ -11,7 +11,7 @@ public sealed partial class PlanktonVialComponent : Component
     ///     This is null by default, obviously.
     /// </summary>
     [DataField]
-    public EntityUid? ContainedSpecimen { get; set; } = null;
+    public PlanktonInstance? Plankton { get; set; }
 
     /// <summary>
     ///     Whether to generate a plankton colony on round-start.

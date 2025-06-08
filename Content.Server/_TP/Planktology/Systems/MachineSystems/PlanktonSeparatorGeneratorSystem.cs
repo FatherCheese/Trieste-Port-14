@@ -1,5 +1,7 @@
 using System.Linq;
 using Content.Shared._TP.Planktology;
+using Content.Shared.Chemistry.Reagent;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 
 namespace Content.Server._TP.Planktology.Systems.MachineSystems;
@@ -7,6 +9,7 @@ namespace Content.Server._TP.Planktology.Systems.MachineSystems;
 public sealed class PlanktonSeparatorGeneratorSystem : EntitySystem
 {
     [Dependency] private readonly IRobustRandom _random = default!;
+    [Dependency] private readonly PrototypeManager _protoManager = default!;
 
     /// <summary>
     ///     A method to generate a plankton name.
@@ -170,6 +173,27 @@ public sealed class PlanktonSeparatorGeneratorSystem : EntitySystem
         }
 
         return weights.Keys.First(); // Fallback
+    }
+
+    /// <summary>
+    ///     A method to handle generating Reagents, if possible.
+    /// </summary>
+    /// <param name="existingCharacteristics"></param>
+    /// <returns></returns>
+    private ReagentId? GenerateReagent(PlanktonCharacteristics existingCharacteristics = PlanktonCharacteristics.None)
+    {
+        if (existingCharacteristics.HasFlag(PlanktonCharacteristics.ChemicalProduction))
+        {
+            var allReagents = _protoManager.EnumeratePrototypes<ReagentPrototype>().ToList();
+
+            if (allReagents.Count > 0)
+            {
+                var randomReagent = _random.Pick(allReagents);
+                return new ReagentId(randomReagent.ID,);
+            }
+        }
+
+        return null;
     }
 
     /// <summary>
