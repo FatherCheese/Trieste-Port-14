@@ -1,19 +1,50 @@
 - type: entity
   id: TP14SeaWreckRoomMarker
-  name: small wreck marker
+  name: wreck marker
   parent: MarkerBase
-  suffix: 5x5
+  suffix: small, 5x5
   components:
   - type: RoomFill
     size: 5,5
     roomWhitelist:
       tags:
-        - SeaWreck
+        - SeaWreckFiveXFive
   - type: Sprite
     layers:
-      - state: red
-      - sprite: Mobs/Aliens/elemental.rsi
-        state: alive
+    - sprite: Markers/cross.rsi
+      state: blue
+      shader: unshaded
+  - type: ScaleVisuals
+    scale: 5, 5
+
+# Kestrel
+- type: entity
+  id: TP14SeaWreckKestrelMarker
+  name: wreck marker
+  parent: MarkerBase
+  suffix: kestrel, 34x20
+  components:
+  - type: RoomFill
+    size: 34,20
+    roomWhitelist:
+      tags:
+        - SeaWreckKestrel
+  - type: Sprite
+    layers:
+    - sprite: Markers/cross.rsi
+      state: blue
+      shader: unshaded
+  - type: ScaleVisuals
+    scale: 34, 20
+
+# 34x20
+- type: dungeonRoom
+  id: WreckKestrel34x20a
+  size: 20,5
+  atlas: /Maps/Dungeon/seawreck.yml
+  offset: 0,-10
+  tags:
+    - SeaWreckKestrel
 
 # Large Rooms
 # 17x5
@@ -248,7 +279,7 @@
   atlas: /Maps/Dungeon/seawreck.yml
   offset: 0,18
   tags:
-    - SeaWreck
+    - SeaWreckFiveXFive
 
 - type: dungeonRoom
   id: Wreck5x5b
@@ -256,7 +287,7 @@
   atlas: /Maps/Dungeon/seawreck.yml
   offset: 6,18
   tags:
-    - SeaWreck
+    - SeaWreckFiveXFive
 
 - type: dungeonRoom
   id: Wreck5x5c
@@ -264,7 +295,7 @@
   atlas: /Maps/Dungeon/seawreck.yml
   offset: 12,18
   tags:
-    - SeaWreck
+    - SeaWreckFiveXFive
 
 - type: dungeonRoom
   id: Wreck5x5d
@@ -272,7 +303,7 @@
   atlas: /Maps/Dungeon/seawreck.yml
   offset: 18,18
   tags:
-    - SeaWreck
+    - SeaWreckFiveXFive
 
 - type: dungeonRoom
   id: Wreck5x5e
@@ -280,7 +311,7 @@
   atlas: /Maps/Dungeon/seawreck.yml
   offset: 24,18
   tags:
-    - SeaWreck
+    - SeaWreckFiveXFive
 
 - type: dungeonRoom
   id: Wreck5x5f
@@ -288,7 +319,7 @@
   atlas: /Maps/Dungeon/seawreck.yml
   offset: 30,18
   tags:
-    - SeaWreck
+    - SeaWreckFiveXFive
 
 # 3x5
 - type: dungeonRoom
