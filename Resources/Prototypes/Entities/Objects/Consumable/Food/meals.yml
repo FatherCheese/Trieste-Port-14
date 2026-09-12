@@ -563,9 +563,9 @@
         Quantity: 60
       - ReagentId: Water
         Quantity: 5
-      - ReagentId: ActivatedAlgae # TRIESTE: 'Bicaridine'
+      - ReagentId: Bicaridine
         Quantity: 5
-      - ReagentId: Lexodine # TRIESTE: 'Kelotane'
+      - ReagentId: Kelotane
         Quantity: 5
   - type: Tag
     tags:

@@ -42,7 +42,7 @@ public sealed partial class ShuttleSystem
         Params = AudioParams.Default.WithVolume(-5f),
     };
 
-    private readonly SoundSpecifier _arrivalSound = new SoundPathSpecifier("/Audio/Effects/Shuttle/hyperspace_end.ogg")
+    private readonly SoundSpecifier _arrivalSound = new SoundPathSpecifier("/Audio/_TP/Effects/Shuttle/hyperspace_end.ogg")
     {
         Params = AudioParams.Default.WithVolume(-5f),
     };
@@ -53,7 +53,7 @@ public sealed partial class ShuttleSystem
         Params = AudioParams.Default.WithVolume(-10f),
     };
 
-    private readonly SoundSpecifier _bellArrivalSound = new SoundPathSpecifier("/Audio/Effects/Shuttle/hyperspace_end.ogg")
+    private readonly SoundSpecifier _bellArrivalSound = new SoundPathSpecifier("/Audio/_TP/Effects/Shuttle/hyperspace_end.ogg")
     {
         Params = AudioParams.Default.WithVolume(-10f),
     };

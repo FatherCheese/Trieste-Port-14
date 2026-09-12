@@ -524,8 +524,6 @@
       weight: 10
     - id: SyringeAmbuzol
     - id: SyringeHyronalin
-    - id: SyringeReinforcementAlgae
-    - id: SyringeRegenerationAlgae
     - id: SyringeTranexamicAcid
     - id: SyringeInaprovaline
     - id: SyringeEphedrine

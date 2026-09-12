@@ -25,8 +25,9 @@
     color: "#76a0b0"
   - type: Anchorable
   - type: InteractionOutline
-  - type: Damageable
+  - type: Injurable
     damageContainer: Inorganic
+  - type: Damageable
     damageModifierSet: Metallic
   - type: Fixtures
     fixtures:
@@ -64,7 +65,6 @@
     price: 75
   - type: RequireProjectileTarget
   - type: InGas
-    gasID: 9
     damagedByGas: false # waterproof
     gasThreshold: 75
     damage:
@@ -90,8 +90,8 @@
       PowerUse: 5
     - type: Tag
       tags:
-      - LightBulb 
-      - Trash 
+      - LightBulb
+      - Trash
 
 - type: entity  # Sweetwater External Lights
   id: TP14PoweredMarineSmallLight
@@ -114,7 +114,6 @@
         Heat: 1
     popupText: powered-light-component-burn-hand
   - type: InGas
-    gasID: 9
     damagedByGas: false # waterproof
     gasThreshold: 75
     damage:
@@ -138,8 +137,8 @@
       PowerUse: 5
     - type: Tag
       tags:
-      - LightBulb 
-      - Trash 
+      - LightBulb
+      - Trash
 
 - type: entity  # Sweetwater Internal Lights
   id: TP14PoweredCoolSmallLight
@@ -162,7 +161,7 @@
         Heat: 1
     popupText: powered-light-component-burn-hand
 
-- type: entity  
+- type: entity
   id: TP14PoweredCoolSmallLightWaterproof
   suffix: Trieste, Sweetwater, Internal, Waterproof
   parent: PoweredSmallLightEmpty
@@ -183,7 +182,6 @@
         Heat: 1
     popupText: powered-light-component-burn-hand
   - type: InGas
-    gasID: 9
     damagedByGas: false # waterproof
     gasThreshold: 75
     damage:

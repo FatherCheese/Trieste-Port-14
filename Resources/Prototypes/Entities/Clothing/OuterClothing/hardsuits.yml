@@ -26,7 +26,7 @@
     sprintModifier: 0.80
   - type: HeldSpeedModifier
   - type: ToggleableClothing
-    clothingPrototype: ClothingHeadHelmetHardsuitBasic
+    clothingPrototype: TP14ClothingHeadHelmetHardsuitBasic
 
 #Atmospherics Hardsuit
 - type: entity

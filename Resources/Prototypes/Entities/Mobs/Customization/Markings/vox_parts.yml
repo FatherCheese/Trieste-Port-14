@@ -167,15 +167,14 @@
         !type:SimpleColoring
         color: "#937e3d"
 
-# TRIESTE: Removed.
-#- type: marking
-# id: VoxTail
-# bodyPart: Tail
-# groupWhitelist: [Vox]
-# forcedColoring: true
-# sprites:
-# - sprite: Mobs/Customization/vox_parts.rsi
-#   state: tail
+- type: marking
+  id: VoxTail
+  bodyPart: Tail
+  groupWhitelist: [Vox]
+  forcedColoring: false # TRIESTE: 'true'
+  sprites:
+  - sprite: Mobs/Customization/vox_parts.rsi
+    state: tail
 
 - type: marking
   id: VoxTailAnimated

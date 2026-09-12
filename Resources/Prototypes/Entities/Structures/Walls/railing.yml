@@ -48,8 +48,9 @@
         - LowImpassable
   - type: InteractionOutline
   - type: Repairable
+  - type: Injurable
+    damageContainer: StructuralInorganic
   - type: Damageable
-    damageContainer: Inorganic
     damageModifierSet: FlimsyMetallic
   - type: Destructible
     thresholds:
@@ -150,8 +151,9 @@
         - LowImpassable
   - type: InteractionOutline
   - type: Repairable
+  - type: Injurable
+    damageContainer: StructuralInorganic
   - type: Damageable
-    damageContainer: Inorganic
     damageModifierSet: FlimsyMetallic
   - type: Destructible
     thresholds:
@@ -217,8 +219,9 @@
           - LowImpassable
   - type: InteractionOutline
   - type: Repairable
+  - type: Injurable
+    damageContainer: StructuralInorganic
   - type: Damageable
-    damageContainer: Inorganic
     damageModifierSet: FlimsyMetallic
   - type: Destructible
     thresholds:

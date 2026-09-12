@@ -241,6 +241,8 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: EffectSpeciesMask
+  - !type:GroupLoadoutEffect # TRIESTE
+    proto: TP14LEGWaterBreather
   equipment:
     outerClothing: ClothingOuterVestTank
 
@@ -253,11 +255,12 @@
   equipment:
     mask: TP14ClothingMaskAir
 
+# TRIESTE: Added. Also what???
 - type: loadout
   id: LoadoutSpeciesGasMask
   effects:
   - !type:GroupLoadoutEffect
-    proto: WaterBreather
+    proto: TP14LEGWaterBreather
   equipment:
     mask: ClothingMaskGas
 

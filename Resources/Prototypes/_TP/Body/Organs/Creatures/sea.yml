@@ -56,3 +56,52 @@
   - type: Nymph
     transferMind: true
     entityPrototype: TP14MobMimic
+
+# BASE MOBS #
+- type: entity
+  parent: [ MobNightVision ]
+  id: TP14BaseMobSeaLandCreature
+  abstract: true
+  components:
+  - type: Body
+  - type: EntityTableContainerFill
+    containers:
+      body_organs: !type:AllSelector
+        children:
+        - id: OrganSeaLandCreatureLungs
+        - id: OrganAnimalHeart
+        - id: OrganMothStomach
+        - id: OrganAnimalLiver
+        - id: OrganAnimalKidneys
+
+- type: entity
+  parent: [ MobNightVision ]
+  id: TP14BaseMobSeaCreature
+  abstract: true
+  components:
+  - type: Body
+  - type: EntityTableContainerFill
+    containers:
+      body_organs: !type:AllSelector
+        children:
+        - id: OrganSeaCreatureLungs
+        - id: OrganAnimalHeart
+        - id: OrganMothStomach
+        - id: OrganAnimalLiver
+        - id: OrganAnimalKidneys
+
+- type: entity
+  parent: [ MobNightVision ]
+  id: TP14BaseMobMimicCreature
+  abstract: true
+  components:
+  - type: Body
+  - type: EntityTableContainerFill
+    containers:
+      body_organs: !type:AllSelector
+        children:
+        - id: OrganSeaLandCreatureLungs
+        - id: OrganAnimalHeart
+        - id: OrganTumor
+        - id: OrganAnimalLiver
+        - id: OrganAnimalKidneys

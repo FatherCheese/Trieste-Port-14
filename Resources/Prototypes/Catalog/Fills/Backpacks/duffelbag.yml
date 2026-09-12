@@ -370,13 +370,11 @@
           amount: 4
         - id: CombatMedipen
           amount: 4
-        #- id: PunctAutoInjector # Trieste: Removed.
-        #  amount: 4
-        #- id: PyraAutoInjector # Trieste: Removed.
-        #  amount: 4
-        - id: AirlossAutoInjector
+        - id: PunctAutoInjector
           amount: 4
-        - id: RegenerationAlgaeAutoInjector # Trieste: Added.
+        - id: PyraAutoInjector
+          amount: 4
+        - id: AirlossAutoInjector
           amount: 4
 
 - type: entity

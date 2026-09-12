@@ -653,7 +653,6 @@
         acts: ["Destruction"]
 
   - type: InGas
-    gasID: 9
     damagedByGas: true
     damage:
         types:
@@ -1004,7 +1003,6 @@
       - !type:DoActsBehavior
         acts: ["Destruction"]
   - type: InGas
-    gasID: 9
     damagedByGas: true
     damage:
         types:

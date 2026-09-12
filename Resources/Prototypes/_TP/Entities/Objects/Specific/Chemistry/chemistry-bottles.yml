@@ -1,44 +1,12 @@
 - type: entity
   parent: BaseChemistryBottleFilled
-  id: TP14ChemistryBottleRegenerationAlgae
-  suffix: Trieste, regeneration algae
+  id: TP14ChemistryBottleArcryox
+  suffix: Trieste, arcryox
   components:
   - type: Label
-    currentLabel: reagent-name-regeneration-algae
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: RegenerationAlgae
-          Quantity: 30
-
-- type: entity
-  parent: BaseChemistryBottleFilled
-  id: TP14ChemistryBottleOxygenatedSaline
-  suffix: Trieste, oxy-saline
-  components:
-  - type: Label
-    currentLabel: reagent-name-oxygenated-saline
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: OxygenatedSaline
-          Quantity: 30
-
-- type: entity
-  parent: BaseChemistryBottleFilled
-  id: TP14ChemistryBottleLexodine
-  suffix: Trieste, lexodine
-  components:
-  - type: Label
-    currentLabel: reagent-name-lexodine
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: Lexodine
-          Quantity: 30
+    currentLabel: reagent-name-arcryox
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Arcryox
+        Quantity: 30

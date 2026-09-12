@@ -24,4 +24,7 @@ public sealed partial class StepfatherComponent : Component
 
     [DataField]
     public EntityWhitelist? PilotWhitelist;
+
+    [DataField]
+    public float MechToPilotDamageMultiplier;
 }

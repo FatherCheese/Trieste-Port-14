@@ -18,6 +18,7 @@ public sealed partial class AtmosphereSystem
     [Dependency] private EntityQuery<MovedByPressureComponent> _movedByPressureQuery = default!;
 
     private static readonly ProtoId<SoundCollectionPrototype> DefaultSpaceWindSounds = "SpaceWind";
+    private static readonly ProtoId<SoundCollectionPrototype> WaterSounds = "Water";
 
     private const int SpaceWindSoundCooldownCycles = 75;
 
@@ -28,7 +29,7 @@ public sealed partial class AtmosphereSystem
 
     // TRIESTE: Water.
     [ViewVariables(VVAccess.ReadWrite)]
-    public SoundSpecifier? WaterMoveSound { get; private set; } = new SoundCollectionSpecifier("/Audio/Effects/water_move.ogg", AudioParams.Default.WithVariation(0.125f));
+    public SoundSpecifier? WaterMoveSound { get; private set; } = new SoundCollectionSpecifier(WaterSounds, AudioParams.Default.WithVariation(0.125f).WithVolume(-10f));
 
     private readonly HashSet<Entity<MovedByPressureComponent>> _activePressures = new(8);
 
@@ -139,13 +140,13 @@ public sealed partial class AtmosphereSystem
             }
         }
 
-        if (_spaceWindSoundCooldown <= 3 && isWaterPresent && !isWaterTooMuch)
+        if (_spaceWindSoundCooldown == 0 && WaterMoveSound != null && isWaterPresent && !isWaterTooMuch)
         {
             var coordinates = _mapSystem.ToCenterCoordinates(tile.GridIndex, tile.GridIndices);
             _audio.PlayPvs(WaterMoveSound,
                 coordinates,
                 AudioParams.Default.WithVariation(0.125f)
-                    .WithVolume(MathHelper.Clamp(tile.PressureDifference / 10, 10, 100)));
+                    .WithVolume(-10f));
         }
 
 

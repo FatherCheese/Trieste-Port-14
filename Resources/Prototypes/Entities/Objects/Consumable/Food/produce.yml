@@ -1511,7 +1511,7 @@
       reagents:
       - ReagentId: Aloe
         Quantity: 10
-      - ReagentId: RegenerationAlgae # TRIESTE: 'Dermaline', Placeholder.
+      - ReagentId: Dermaline
         Quantity: 10
   - type: Sprite
     sprite: Objects/Specific/Hydroponics/aloe.rsi
@@ -1547,7 +1547,7 @@
       reagents:
       - ReagentId: Nutriment
         Quantity: 5
-      - ReagentId: ReinforcementAlgae # TRIESTE: 'Bicaridine', Placeholder.
+      - ReagentId: Bicaridine
         Quantity: 10
   - type: Sprite
     sprite: Objects/Specific/Hydroponics/poppy.rsi
@@ -1639,9 +1639,9 @@
   - type: Solution
     solution:
       reagents:
-      - ReagentId: ReinforcementAlgae # TRIESTE: 'Bicaridine', Placeholder.
+      - ReagentId: Bicaridine
         Quantity: 5
-      - ReagentId: Lexodine # TRIESTE: 'Kelotane'.
+      - ReagentId: Kelotane
         Quantity: 5
       - ReagentId: Nutriment
         Quantity: 3

@@ -11,8 +11,8 @@
         - id: CargoBountyComputerCircuitboard
         - id: CargoRequestComputerCircuitboard
         - id: CargoSaleComputerCircuitboard
-        - id: CargoShuttleConsoleCircuitboard
-        # - id: SalvageMagnetMachineCircuitboard # Trieste: Removed.
+        # - id: CargoShuttleConsoleCircuitboard # TRIESTE: Removed.
+        # - id: SalvageMagnetMachineCircuitboard # TRIESTE: Removed.
         - id: SalvageJobBoardComputerCircuitboard
         - id: MailTeleporterMachineCircuitboard
 

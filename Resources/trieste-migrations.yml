@@ -89,3 +89,20 @@ PoweredMarineSmallLight: TP14PoweredMarineSmallLight
 
 # 2026-08-07
 FloorDrainPlatform: null
+
+# 2026-08-13
+LeftFootSkeleton: OrganSkeletonPersonFootLeft
+LeftLegReptilian: OrganReptilianLegLeft
+LeftLegSlime: OrganSlimePersonLegLeft
+MagicalLamp: LampGold
+RightLegSkeleton: OrganSkeletonPersonLegRight
+
+PillCanisterReinforcementAlgae: null
+
+# 2026-08-17
+JugCalcium: null
+TP14EntJugSeaWater: TP14JugSeaWater
+SoapNTTraitor: TP14SoapNT
+
+# 2026-09-02
+CrudeOilVial: TP14ChemistryVialCrudeOil

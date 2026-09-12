@@ -200,8 +200,7 @@
 - type: marking
   id: TattooEyeshadowLower
   bodyPart: Eyes
-  markingCategory: Overlay
-  speciesRestriction: [Human, SlimePerson, Reptilian]
+  groupWhitelist: [Human, Slime, Reptilian]
 # forcedColoring: true # Trieste: Removed.
   sprites:
   - sprite: Mobs/Customization/tattoos.rsi

@@ -6,7 +6,7 @@
     - id: ChemistryBottleKelotane
     - id: ChemistryBottleDylovene
     - id: ChemistryBottleInaprovaline
-    - id: TP14ChemistryBottleOxygenatedSaline
+    - id: ChemistryBottleDexalin
     - id: ChemistryBottleSaline
     - id: ChemistryBottleTricordrazine
     - id: ChemistryBottleHyronalin
@@ -25,7 +25,7 @@
     - id: ChemistryBottleCryoxadone
     - id: ChemistryBottleCryptobiolin
     - id: ChemistryBottleDermaline
-    - id: TP14ChemistryBottleOxygenatedSaline
+    - id: ChemistryBottleDexalin
     - id: ChemistryBottleDiphenhydramine
     - id: ChemistryBottleDiphenylmethylamine
     - id: ChemistryBottleDoxarubixadone
@@ -43,7 +43,7 @@
     - id: ChemistryBottleLeporazine
     - id: ChemistryBottleLipozine
     - id: ChemistryBottleMannitol
-    - id: ChemistryBottleNecrosol
+    - id: TP14ChemistryBottleArcryox
     - id: ChemistryBottleOculine
     - id: ChemistryBottleOmnizine
     - id: ChemistryBottleOpporozidone

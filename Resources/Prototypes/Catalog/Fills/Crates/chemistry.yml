@@ -34,7 +34,6 @@
         - id: JugSodium
         - id: JugPotassium
         - id: JugRadium
-        - id: JugCalcium # Trieste: Added.
 
 - type: entity
   parent: CrateChemistrySecure

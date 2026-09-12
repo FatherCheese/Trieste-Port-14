@@ -5,9 +5,8 @@
   components:
   - type: Label
     currentLabel: Corn Oil
-  - type: SolutionContainerManager
-    solutions:
-      beaker:
-        reagents:
+  - type: Solution
+    solution:
+      reagents:
         - ReagentId: Cornoil
-          Quantity: 200
+          Quantity: 240

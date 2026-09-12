@@ -35,7 +35,7 @@ public sealed partial class WeatherChangeRule : StationEventSystem<WeatherChange
             if (!_protoMan.TryIndex(comp.TargetWeather, out var targetWeather))
                 return;
 
-            if (targetWeather.HasComp<WeatherStatusEffectComponent>(_factory))
+            if (!targetWeather.HasComp<WeatherStatusEffectComponent>(_factory))
             {
                 Log.Error("Weather entity not found!");
                 return;
@@ -89,7 +89,7 @@ public sealed partial class WeatherChangeRule : StationEventSystem<WeatherChange
             if (!_protoMan.TryIndex(comp.ReturnWeather, out var returnWeather))
                 return;
 
-            if (returnWeather.HasComp<WeatherStatusEffectComponent>(_factory))
+            if (!returnWeather.HasComp<WeatherStatusEffectComponent>(_factory))
             {
                 Log.Error("Weather entity not found!");
                 return;

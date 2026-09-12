@@ -41,7 +41,7 @@
   - type: Solution
     solution:
       reagents:
-      - ReagentId: ActivatedAlgae # Trieste: 'Bicaridine'
+      - ReagentId: Bicaridine
         Quantity: 5
       - ReagentId: Nutriment
         Quantity: 10

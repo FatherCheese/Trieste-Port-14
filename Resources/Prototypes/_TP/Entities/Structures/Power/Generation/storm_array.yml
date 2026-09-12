@@ -53,6 +53,8 @@
     - StormArray
     - Power
   - type: Damageable
+    damageModifierSet: StructuralMetallicStrong
+  - type: Injurable
     damageContainer: StructuralInorganic
   - type: Temperature
     currentTemperature: 243.15
@@ -173,24 +175,10 @@
       output_hv:
         !type:CableDeviceNode
         nodeGroupID: HVPower
-
-- type: entity
-  id: TP14StormArrayCirculatorArrow
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: Sprite
-    sprite: Markers/teg_arrow.rsi
-    layers:
-      - state: arrow
-        offset: 2, 0
-        rotation: 270
-        color: "#FFFFFFBB"
-      - state: arrow
-        offset: -2, 0
-        rotation: 270
-        color: "#FFAAAABB"
-  - type: TimedDespawn
-    lifetime: 2
-  - type: Tag
-    tags:
-      - HideContextMenu
+  - type: DirectionalArrowIndicator
+    arrows:
+    - offset: 2, 0
+      arrowType: BlueDirectionalArrowIndicator
+    - offset: -2, 0
+      rotation: 270
+      arrowType: RedDirectionalArrowIndicator

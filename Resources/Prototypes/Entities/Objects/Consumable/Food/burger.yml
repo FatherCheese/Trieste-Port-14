@@ -470,7 +470,7 @@
       reagents:
       - ReagentId: Nutriment
         Quantity: 20
-      - ReagentId: ActivatedAlgae #keeping it somewhat consistent with the meat itself # Trieste: 'Bicaridine', Placeholder.
+      - ReagentId: Bicaridine
         Quantity: 20
       - ReagentId: Vitamin
         Quantity: 10

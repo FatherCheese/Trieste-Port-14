@@ -87,7 +87,8 @@
   sprites:
   - sprite: _CD/Mobs/Customization/Moth/chest.rsi
     state: glow
-  shader: unshaded
+  shaders:
+    glow: unshaded
 
 - type: marking
   id: TorsoIncisionMoth
@@ -167,7 +168,8 @@
   sprites:
   - sprite: _CD/Mobs/Customization/Moth/head.rsi
     state: glow
-  shader: unshaded
+  shaders:
+    glow: unshaded
 
 - type: marking
   id: MothSlashLeft
@@ -191,7 +193,10 @@
   id: MouthpartsFulgoridae
   bodyPart: Snout
   groupWhitelist: [ Moth ]
-  followSkinColor: true
+  coloring:
+    default:
+      type:
+        !type:SkinColoring
   forcedColoring: true
   sprites:
   - sprite: _CD/Mobs/Customization/Moth/snout.rsi
@@ -201,7 +206,10 @@
   id: MouthpartsFulgoridaeUpturned
   bodyPart: Snout
   groupWhitelist: [ Moth ]
-  followSkinColor: true
+  coloring:
+    default:
+      type:
+        !type:SkinColoring
   forcedColoring: true
   sprites:
   - sprite: _CD/Mobs/Customization/Moth/snout.rsi
@@ -211,7 +219,10 @@
   id: MouthpartsHymenoptera
   bodyPart: Snout
   groupWhitelist: [ Moth ]
-  followSkinColor: true
+  coloring:
+    default:
+      type:
+        !type:SkinColoring
   forcedColoring: true
   sprites:
   - sprite: _CD/Mobs/Customization/Moth/snout.rsi
@@ -221,7 +232,10 @@
   id: MouthpartsHymenopteraLarge
   bodyPart: Snout
   groupWhitelist: [ Moth ]
-  followSkinColor: true
+  coloring:
+    default:
+      type:
+        !type:SkinColoring
   forcedColoring: true
   sprites:
   - sprite: _CD/Mobs/Customization/Moth/snout.rsi
@@ -257,7 +271,10 @@
   id: MouthpartsSchistocerca
   bodyPart: Snout
   groupWhitelist: [ Moth ]
-  followSkinColor: true
+  coloring:
+    default:
+      type:
+        !type:SkinColoring
   forcedColoring: true
   sprites:
   - sprite: _CD/Mobs/Customization/Moth/snout.rsi
@@ -525,7 +542,10 @@
   bodyPart: HeadSide
   groupWhitelist: [ Moth ]
   forcedColoring: true
-  followSkinColor: true
+  coloring:
+    default:
+      type:
+        !type:SkinColoring
   sprites:
   - sprite: _CD/Mobs/Customization/Moth/headside.rsi
     state: blunt
@@ -535,7 +555,10 @@
   bodyPart: HeadSide
   groupWhitelist: [ Moth ]
   forcedColoring: true
-  followSkinColor: true
+  coloring:
+    default:
+      type:
+        !type:SkinColoring
   sprites:
   - sprite: _CD/Mobs/Customization/Moth/headside.rsi
     state: daisy
@@ -545,7 +568,10 @@
   bodyPart: HeadSide
   groupWhitelist: [ Moth ]
   forcedColoring: true
-  followSkinColor: true
+  coloring:
+    default:
+      type:
+        !type:SkinColoring
   sprites:
   - sprite: _CD/Mobs/Customization/Moth/headside.rsi
     state: heart
@@ -555,7 +581,10 @@
   bodyPart: HeadSide
   groupWhitelist: [ Moth ]
   forcedColoring: true
-  followSkinColor: true
+  coloring:
+    default:
+      type:
+        !type:SkinColoring
   sprites:
   - sprite: _CD/Mobs/Customization/Moth/headside.rsi
     state: horn
@@ -565,19 +594,24 @@
   bodyPart: HeadSide
   groupWhitelist: [ Moth ]
   forcedColoring: true
-  followSkinColor: true
+  coloring:
+    default:
+      type:
+        !type:SkinColoring
   sprites:
   - sprite: _CD/Mobs/Customization/Moth/headside.rsi
     state: smallspike
 
 # HeadTop
-
 - type: marking
   id: MothBeetleHorn1
   bodyPart: HeadTop
   groupWhitelist: [ Moth ]
   forcedColoring: true
-  followSkinColor: true
+  coloring:
+    default:
+      type:
+        !type:SkinColoring
   sprites:
   - sprite: _CD/Mobs/Customization/Moth/headtop.rsi
     state: beetlehorn1
@@ -587,7 +621,10 @@
   bodyPart: HeadTop
   groupWhitelist: [ Moth ]
   forcedColoring: true
-  followSkinColor: true
+  coloring:
+    default:
+      type:
+        !type:SkinColoring
   sprites:
   - sprite: _CD/Mobs/Customization/Moth/headtop.rsi
     state: beetlehorn2
@@ -599,7 +636,8 @@
   sprites:
   - sprite: _CD/Mobs/Customization/Moth/headtop.rsi
     state: glowantenna
-  shader: unshaded
+  shaders:
+    glowantenna: unshaded
 
 - type: marking
   id: AntennaCockroach
@@ -665,15 +703,10 @@
   sprites:
   - sprite: _CD/Mobs/Customization/Moth/tail.rsi
     state: firefly2
-
-- type: marking
-  id: MothFireflyOverlay
-  bodyPart: Tail
-  groupWhitelist: [ Moth ]
-  sprites:
   - sprite: _CD/Mobs/Customization/Moth/tail.rsi
     state: firefly1
-  shader: unshaded
+  shaders:
+    firefly1: unshaded
 
 - type: marking
   id: MothGlasswing

@@ -28,7 +28,6 @@
     maxCharge: 280
     startingCharge: 0
   - type: BatterySelfRecharger
-    autoRecharge: true
     autoRechargeRate: 1
   - type: Tag
     tags:

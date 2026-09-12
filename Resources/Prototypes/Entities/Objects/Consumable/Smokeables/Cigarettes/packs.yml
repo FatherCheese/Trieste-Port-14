@@ -237,13 +237,13 @@
       weight: 4
     - id: CigaretteDylovene
       weight: 4
-    - id: CigaretteRegeneration # TRIESTE: 'CigaretteDermaline'
+    - id: CigaretteDermaline
       weight: 4
     - id: CigaretteArithrazine
       weight: 4
-    - id: CigaretteReinforcement # TRIESTE: 'CigaretteBicaridine'
+    - id: CigaretteBicaridine
       weight: 4
-    - id: CigaretteOxygenated # TRIESTE: 'CigaretteDexalin'
+    - id: CigaretteDexalin
       weight: 4
     - id: CigaretteHaloperidol
       weight: 6

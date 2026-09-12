@@ -48,7 +48,6 @@
   - type: Physics
     bodyType: Static
   - type: InGas
-    gasID: 9
     damagedByGas: true # Water pressure shatters them
     gasThreshold: 75
     damage:
@@ -444,7 +443,6 @@
         Heat: 2
     popupText: powered-light-component-burn-hand
   - type: InGas
-    gasID: 9
     damagedByGas: false # waterproof
     gasThreshold: 75
     damage:

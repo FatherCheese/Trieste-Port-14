@@ -35,7 +35,6 @@
   id: SlimeCore
   bodyPart: Chest
   groupWhitelist: [ Slime ]
-  followSkinColor: false
   coloring:
     default:
       type:
@@ -48,7 +47,6 @@
   id: SlimeCoreGlowing
   bodyPart: Chest
   groupWhitelist: [ Slime ]
-  followSkinColor: false
   coloring:
     default:
       type:
@@ -56,13 +54,17 @@
   sprites:
   - sprite: _CD/Mobs/Customization/SlimePerson/chest.rsi
     state: core
-  shader: unshaded
+    shaders:
+      core: unshaded
 
 - type: marking
   id: SlimeLungs
   bodyPart: Chest
   groupWhitelist: [ Slime ]
-  followSkinColor: true
+  coloring:
+    default:
+      type:
+        !type:SkinColoring
   sprites:
   - sprite: _CD/Mobs/Customization/SlimePerson/chest.rsi
     state: lungs
@@ -80,7 +82,10 @@
     state: fadingstars2
   - sprite: _CD/Mobs/Customization/SlimePerson/head.rsi
     state: fadingstars3
-  shader: unshaded
+  shaders:
+    fadingstars1: unshaded
+    fadingstars2: unshaded
+    fadingstars3: unshaded
 
 - type: marking
   id: fizz
@@ -108,7 +113,10 @@
   bodyPart: Head
   groupWhitelist: [ Slime ]
   forcedColoring: true
-  followSkinColor: true
+  coloring:
+    default:
+      type:
+        !type:SkinColoring
   sprites:
   - sprite: _CD/Mobs/Customization/SlimePerson/head.rsi
     state: nose
@@ -117,7 +125,10 @@
   id: SlimeMouth
   bodyPart: Head
   groupWhitelist: [ Slime ]
-  followSkinColor: true
+  coloring:
+    default:
+      type:
+        !type:SkinColoring
   sprites:
   - sprite: _CD/Mobs/Customization/SlimePerson/head.rsi
     state: mouth
@@ -126,7 +137,10 @@
   id: SlimeBrain
   bodyPart: Head
   groupWhitelist: [ Slime ]
-  followSkinColor: true
+  coloring:
+    default:
+      type:
+        !type:SkinColoring
   sprites:
   - sprite: _CD/Mobs/Customization/SlimePerson/head.rsi
     state: brain
@@ -147,7 +161,8 @@
   sprites:
   - sprite: _CD/Mobs/Customization/SlimePerson/eyes.rsi
     state: glow
-  shader: unshaded
+  shaders:
+    glow: unshaded
 
 - type: marking
   id: SlimeEyesDroopy
@@ -174,7 +189,8 @@
   sprites:
   - sprite: _CD/Mobs/Customization/SlimePerson/eyes.rsi
     state: droopyglow
-  shader: unshaded
+  shaders:
+    droopyglow: unshaded
 
 - type: marking
   id: SlimeEyesCyclops
@@ -201,7 +217,8 @@
   sprites:
   - sprite: _CD/Mobs/Customization/SlimePerson/eyes.rsi
     state: cyclopsglow
-  shader: unshaded
+  shaders:
+    cyclopsglow: unshaded
 
 # RArm
 

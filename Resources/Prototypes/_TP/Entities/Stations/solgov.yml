@@ -8,3 +8,27 @@
   - BaseStationAlertLevels
   components:
   - type: Transform
+
+# Just a carbon copy of 'StandardNanotrasenStation', minus CentCom.
+- type: entity
+  id: StandardSolGovStation
+  parent:
+  - BaseStation
+  - BaseStationNews
+  - BaseStationCargo
+  - BaseStationJobsSpawning
+  - BaseStationRecords
+  - BaseStationArrivals
+  - BaseStationShuttles
+  - BaseStationEvacuation
+  - BaseStationAlertLevels
+  - BaseStationMagnet
+  - BaseStationExpeditions
+  - BaseStationSalvageJobs
+  - BaseStationSiliconLawCrewsimov
+  - BaseStationAllEventsEligible
+  - BaseStationNanotrasen
+  - BaseStationDeliveries
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Transform

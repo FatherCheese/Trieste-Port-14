@@ -313,7 +313,7 @@
       reagents:
       - ReagentId: Nutriment
         Quantity: 10
-      - ReagentId: ActivatedAlgae # TRIESTE: 'Bicaridine', Placeholder.
+      - ReagentId: Bicaridine
         Quantity: 20
   - type: StaticPrice
     price: 750

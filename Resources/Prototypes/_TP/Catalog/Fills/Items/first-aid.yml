@@ -9,7 +9,7 @@
         children:
         - id: Ointment
           amount: 2
-        - id: PillCanisterRegenerationAlgae
+        - id: PillCanisterDermaline
         - id: PillTricordrazine
 
 - type: entity
@@ -25,4 +25,3 @@
         - id: EmergencyOxygenTankFilled
         - id: EmergencyMedipen
         - id: SyringeInaprovaline
-        - id: PillCanisterOxygenatedSaline # Trieste

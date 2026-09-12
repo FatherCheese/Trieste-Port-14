@@ -96,9 +96,10 @@ public sealed partial class CCVars
 
     /// <summary>
     ///     How much time in seconds that needs to pass before a non-arrivals shuttle can FTL again.
+    ///     TRIESTE: '60f'
     /// </summary>
     public static readonly CVarDef<float> FTLCooldown =
-        CVarDef.Create("shuttle.cooldown", 60f, CVar.SERVERONLY);
+        CVarDef.Create("shuttle.cooldown", 10f, CVar.SERVERONLY);
 
     /// <summary>
     ///     How much time in seconds that needs to pass before the arrivals shuttle can FTL again.

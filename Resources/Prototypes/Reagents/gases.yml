@@ -29,7 +29,7 @@
       - !type:ModifyLungGas
         conditions:
         - !type:MetabolizerTypeCondition
-          type: [ Jellid ]
+          type: [ Jellid, TP14WaterBreather ]
         ratios:
           Water: -1.0
       - !type:HealthChange
@@ -43,7 +43,7 @@
       - !type:HealthChange
         conditions:
         - !type:MetabolizerTypeCondition
-          type: [ Jellid ]
+          type: [ Jellid, TP14WaterBreather ]
         ignoreResistances: true
         damage:
           types:

@@ -256,7 +256,6 @@
     - Critical
     - Dead
   - type: InGas # TP
-    gasID: 9 # short-circuits in water
     damagedByGas: true
     gasThreshold: 50
     damage:

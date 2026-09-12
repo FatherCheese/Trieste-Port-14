@@ -39,6 +39,7 @@
   - type: Clickable
   - type: Appearance
   - type: AnimationPlayer
+  - type: Damageable
   - type: GuideHelp
     guides:
     - AnomalousResearch
@@ -468,56 +469,6 @@
       - MobSpawnCrabUranium
 
 - type: entity
-  id: AnomalyRockBananium
-  parent: AnomalyRockBase
-  suffix: Rock, Bananium
-  components:
-  - type: Sprite
-    color: "#ddde40"
-  - type: PointLight
-    radius: 2.0
-    energy: 7.5
-    color: "#ddde40"
-  - type: EntitySpawnAnomaly
-    entries:
-    - settings:
-        spawnOnPulse: true
-        minAmount: 8
-        maxAmount: 15
-        minRange: 4.5
-        maxRange: 7.5
-      spawns:
-      - WallSpawnAsteroid
-      - WallSpawnAsteroid
-      - WallSpawnAsteroidBananium
-      - WallSpawnAsteroidBananiumCrab
-    - settings:
-        spawnOnPulse: true
-        maxAmount: 3
-        minRange: 2.5
-        maxRange: 4.5
-      spawns:
-      - CrystalYellow
-    - settings:
-        spawnOnSuperCritical: true
-        minAmount: 30
-        maxAmount: 40
-        minRange: 5
-        maxRange: 15
-      spawns:
-      - CrystalYellow
-      - WallSpawnAsteroid
-      - WallSpawnAsteroid
-      - WallSpawnAsteroidBananiumCrab
-    - settings:
-        spawnOnSuperCritical: true
-        minAmount: 3
-        maxAmount: 6
-        maxRange: 5
-      spawns:
-      - MobSpawnCrabBananium
-
-- type: entity
   id: AnomalyRockQuartz
   parent: AnomalyRockBase
   suffix: Rock, Quartz
@@ -942,11 +893,11 @@
     - Cryptobiolin
     - Dylovene
     - Arithrazine
-    - ReinforcementAlgae
-    - RegenerationAlgae
-    - OxygenatedSaline
-    - Lexodine 
+    - Bicaridine
     - Cryoxadone
+    - Dermaline
+    - Dexalin
+    - DexalinPlus
     - Epinephrine
     - Leporazine
     - Ambuzol
@@ -1042,7 +993,7 @@
     departureSound: /Audio/Items/hiss.ogg
   - type: Tag
     tags:
-      - SpookyFog
+    - SpookyFog
   - type: DamageOnInteract
     damage:
       types:
@@ -1085,8 +1036,8 @@
   - type: TechAnomaly
   - type: DeviceLinkSource
     ports:
-      - Pulse
-      - Timer
+    - Pulse
+    - Timer
 
 - type: entity
   id: AnomalyTechBeam
@@ -1113,7 +1064,7 @@
     lifetime: 2.3
   - type: Tag
     tags:
-      - HideContextMenu
+    - HideContextMenu
 
 - type: entity
   id: AnomalySanta

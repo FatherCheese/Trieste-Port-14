@@ -971,16 +971,12 @@
   - type: XAEFoam
     replaceDescription: true
     reagents:
-    #- Dermaline TP14
-    - RegenerationAlgae # TP14
+    - Dermaline
     - Arithrazine
-    #- Bicaridine TP14 
-    - ReinforcementAlgae
+    - Bicaridine
     - Inaprovaline
-    #- Kelotane TP14
-    #- Dexalin TP14
-    - Lexodine # TP14
-    - OxygenatedSaline # TP14
+    - Kelotane
+    - Dexalin
     - Omnizine
 
 - type: entity

@@ -253,6 +253,7 @@ namespace Content.Shared.Preferences
 
         /// <summary>
         /// A randomize config that covers all possible values (including appearance).
+        /// TRIESTE: Removed markings.
         /// </summary>
         public const RandomizeCfg RandomizeConfigAll =
             RandomizeCfg.Name
@@ -261,8 +262,7 @@ namespace Content.Shared.Preferences
             | RandomizeCfg.Sex
             | RandomizeCfg.Gender
             | RandomizeCfg.Eyes
-            | RandomizeCfg.Skin
-            | RandomizeCfg.Markings;
+            | RandomizeCfg.Skin;
 
         /// <summary>
         /// Picks a random species from roundstart species.

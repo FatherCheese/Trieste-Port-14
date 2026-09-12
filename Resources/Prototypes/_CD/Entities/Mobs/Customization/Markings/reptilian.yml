@@ -71,7 +71,6 @@
   id: LizardSnoutTall
   bodyPart: Snout
   forcedColoring: true
-  markingCategory: Snout
   groupWhitelist: [ Reptilian ]
   sprites:
   - sprite: _CD/Mobs/Customization/Reptilian/snout.rsi
