@@ -36,6 +36,7 @@
         children:
         - id: MedicalTechFabCircuitboard
         - id: CargoRequestMedicalComputerCircuitboard
+        - id: TP14FallMonitorCircuitboard # TRIESTE
 
 - type: entity
   parent: ToteBase
@@ -97,13 +98,10 @@
   id: BoxQMStamps
   name: quartermaster's stamp box
   components:
-  - type: EntityTableContainerFill
-    containers:
-      storagebase: !type:AllSelector
-        children:
-        - id: RubberStampApproved
-        - id: RubberStampDenied
-        - id: RubberStampQm
+  - type: StorageFill
+    contents:
+      - id: MedicalTechFabCircuitboard
+      - id: CargoRequestMedicalComputerCircuitboard
 
 - type: entity
   parent: ToteBase
